@@ -76,18 +76,18 @@ Syllabus : {
      * }
      *
      * NOTE:
-     * - 'args' refers to the number of arguments
-     *  expected by the command mix-in function, not by
-     *  the original Redis command.
-     * - 'sub' collects command direct child(ren) for
-     * commands like: OBJECT REFCOUNT.
+     * - 'args' refers to the number of arguments expected by the command  mix-in 
+     *    function, not by the original Redis command.
+     * - 'sub' collects command direct child(ren) for commands like: OBJECT REFCOUNT.
      */
     , info : function ( String cmd ) : Object
 
     /*
      * Stick or unstick the #info method to every
      * command function.
-     * It returns the number of items that were updated.
+     *
+     * It returns the number of commands/items that
+     * were updated.
      * 
      * Example: Syllabus.commands.object.info();
      *
@@ -99,8 +99,6 @@ Syllabus : {
      * Get the current number of commands in the syllabus.
      */
     , count : function () : Number
-
-
 }
 ```
 
