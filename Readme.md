@@ -50,7 +50,7 @@ Syllabus( [ Boolean develop ] )
 
 Syllabus : {
     /*
-     * A collection of Redis commands mix.ins.
+     * A collection of Redis commands mix-ins.
      */
     commands : { .. }
 
