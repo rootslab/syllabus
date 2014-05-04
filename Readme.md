@@ -34,13 +34,17 @@ $ npm test
 > See [examples](example/).
 
 
-###Properties
+###Properties, Methods
+
+> Arguments within [ ] are optional.
 
 ```javascript
-/*
- * Syllabus is an obj/hash that holds all Redis commands mix-ins.
- */
-Syllabus : Object
+
+Syllabus : {
+    info : function ( String cmd ) { .. }
+    , stick : function ( [ Boolean enable ] ) { .. }
+    , commands : { .. }
+}
 ```
 
 ------------------------------------------------------------------------
