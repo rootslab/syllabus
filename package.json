@@ -1,6 +1,6 @@
 {
   "name": "syllabus",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "Syllabus, a collection of mix-ins for Redis commands.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
@@ -21,6 +21,7 @@
     "email": "44gatti@gmail.com"
   },
   "dependencies": {
+    "abaco" : ">=1.8.2",
     "bolgia" : ">=2.3.1",
     "sermone" : ">=1.3.0"
     },
