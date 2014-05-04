@@ -60,7 +60,8 @@ Syllabus : {
     , types : { .. }
 
     /*
-     * Command raw encoding. It accepts 4 different signatures.
+     * Use raw encoding for commands.
+     * It accepts 4 different signatures.
      * See Sermone#encode.
      */
     , encode : Function
