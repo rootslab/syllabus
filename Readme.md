@@ -70,7 +70,7 @@ Syllabus : {
      *   rtype: '+',
      *   since: '1.0.0',
      *   hint: 'PING',
-     *   url: 'http://redis.io/commands/PinG' 
+     *   url: 'http://redis.io/commands/ping' 
      * }
      *
      * NOTE: only in develop mode.
@@ -85,7 +85,7 @@ Syllabus : {
      * command function.
      * It returns the number of items that were updated.
      * 
-     * Example: Syllabus.commands.ping.info();
+     * Example: Syllabus.commands.object.info();
      *
      * NOTE: only in develop mode.
      * NOTE: use false to unstick.
