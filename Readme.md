@@ -53,7 +53,18 @@ Syllabus : {
      * A collection of Redis commands mix-ins.
      */
     commands : { .. }
-     
+
+    /*
+     * Redis commands categories.
+     */
+    , types : { .. }
+
+    /*
+     * Command raw encoding. It accepts 4 different signatures.
+     * See Sermone#encode.
+     */
+    , encode : Function
+
     /* NOTE: methods below exist only in develop mode. */
 
     /*
