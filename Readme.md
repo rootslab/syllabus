@@ -16,7 +16,7 @@ $ npm install syllabus [-g]
 $ git clone git@github.com:rootslab/syllabus.git
 ```
 
-> __require__ returns an hash/obj.
+> __require__ .
 
 ```javascript
 var Syllabus  = require( 'syllabus' );
@@ -27,6 +27,14 @@ var Syllabus  = require( 'syllabus' );
 ```bash
 $ cd syllabus/
 $ npm test
+```
+###Constructor
+
+> Create an instance. Optionally it is possible to enable
+> development / informational mode.
+
+```javascript
+Syllabus( [ Boolean develop ] )
 ```
 
 ###Sample Usage
@@ -41,9 +49,48 @@ $ npm test
 ```javascript
 
 Syllabus : {
-    info : function ( String cmd ) { .. }
-    , stick : function ( [ Boolean enable ] ) { .. }
-    , commands : { .. }
+    /*
+     * Redis commands
+     */
+    commands : { .. }
+
+    /*
+     * Get some infos about a command.
+     * 
+     * Example: Syllabus.info( 'PiNg' );
+     *
+     * Output is:
+     *
+     * { 
+     *   name: 'ping',
+     *   args: 0,
+     *   type: 'connection',
+     *   cmd: 'PING',
+     *   sub: [],
+     *   rtype: '+',
+     *   since: '1.0.0',
+     *   hint: 'PING',
+     *   url: 'http://redis.io/commands/PinG' 
+     * }
+     *
+     * NOTE: only in develop mode.
+     * NOTE: 'args' refers to the number of arguments
+     * expected by the command mix-in function, not by
+     * the original Redis command.
+     */
+    , info : function ( String cmd ) : Object
+
+    /*
+     * Stick or unstick the #info method to every
+     * command function.
+     * It returns the number of items that were updated.
+     * 
+     * Example: Syllabus.commands.ping.info();
+     *
+     * NOTE: only in develop mode.
+     * NOTE: use false to unstick.
+     */
+    , stick : function ( [ Boolean enable ] ) : Number
 }
 ```
 
