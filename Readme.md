@@ -31,7 +31,7 @@ $ npm test
 ###Constructor
 
 > Create an instance. Optionally it is possible to enable
-> development / informational mode.
+> development / informational mode, with a Boolean true.
 
 ```javascript
 Syllabus( [ Boolean develop ] )
@@ -73,7 +73,7 @@ Syllabus : {
      *   url: 'http://redis.io/commands/ping' 
      * }
      *
-     * NOTE: only in develop mode.
+     * NOTE: exists only in develop mode.
      * NOTE: 
      * - 'args' refers to the number of arguments
      *  expected by the command mix-in function, not by
@@ -90,7 +90,7 @@ Syllabus : {
      * 
      * Example: Syllabus.commands.object.info();
      *
-     * NOTE: only in develop mode.
+     * NOTE: exists only in develop mode.
      * NOTE: use false to unstick.
      */
     , stick : function ( [ Boolean enable ] ) : Number
