@@ -53,6 +53,8 @@ Syllabus : {
      * A collection of Redis commands mix-ins.
      */
     commands : { .. }
+     
+    /* NOTE: methods below exist only in develop mode. */
 
     /*
      * Get some infos about a command.
@@ -73,8 +75,7 @@ Syllabus : {
      *   url: 'http://redis.io/commands/ping' 
      * }
      *
-     * NOTE: exists only in develop mode.
-     * NOTE: 
+     * NOTE:
      * - 'args' refers to the number of arguments
      *  expected by the command mix-in function, not by
      *  the original Redis command.
@@ -90,10 +91,16 @@ Syllabus : {
      * 
      * Example: Syllabus.commands.object.info();
      *
-     * NOTE: exists only in develop mode.
      * NOTE: use false to unstick.
      */
     , stick : function ( [ Boolean enable ] ) : Number
+
+    /*
+     * Get the current number of commands in the syllabus.
+     */
+    , count : function () : Number
+
+
 }
 ```
 
