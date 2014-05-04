@@ -50,7 +50,7 @@ Syllabus( [ Boolean develop ] )
 
 Syllabus : {
     /*
-     * Redis commands
+     * A collection of Redis commands mix.ins.
      */
     commands : { .. }
 
@@ -79,7 +79,7 @@ Syllabus : {
      *  expected by the command mix-in function, not by
      *  the original Redis command.
      * - 'sub' collects command direct child(ren) for
-     * commands ike: OBJECT REFCOUNT.
+     * commands like: OBJECT REFCOUNT.
      */
     , info : function ( String cmd ) : Object
 
