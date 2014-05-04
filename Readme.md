@@ -74,9 +74,12 @@ Syllabus : {
      * }
      *
      * NOTE: only in develop mode.
-     * NOTE: 'args' refers to the number of arguments
-     * expected by the command mix-in function, not by
-     * the original Redis command.
+     * NOTE: 
+     * - 'args' refers to the number of arguments
+     *  expected by the command mix-in function, not by
+     *  the original Redis command.
+     * - 'sub' collects command direct child(ren) for
+     * commands ike: OBJECT REFCOUNT.
      */
     , info : function ( String cmd ) : Object
 
