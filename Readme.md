@@ -34,7 +34,7 @@ $ npm test
 > development / informational mode, with a Boolean true.
 
 ```javascript
-Syllabus( [ Boolean develop ] )
+var s = Syllabus( [ Boolean develop ] )
 ```
 
 ###Sample Usage
@@ -108,9 +108,10 @@ Syllabus : {
     , stick : function ( [ Boolean enable ] ) : Number
 
     /*
-     * Get the current number of commands in the syllabus.
+     * Get the current number of commands in the syllabus
+     * and of keywords types.
      */
-    , count : function () : Number
+    , size : function () : Number
 }
 ```
 
