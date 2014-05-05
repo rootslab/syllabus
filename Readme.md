@@ -90,9 +90,11 @@ Syllabus : {
      *
      * NOTE:
      *  - 'name' is the mix-in method name.
-     *  - 'args' refers to the number of arguments expected by the command  mix-in 
-     *     function, not by the original Redis command.
-     *  - 'sub' collects command direct child(ren) for commands like: OBJECT REFCOUNT.
+     *  - 'args' refers to the number of arguments expected by the command
+     *     mix-in method, not by the original Redis command.
+     *  - 'sub' collects command direct child(ren) for commands like: 
+     *     OBJECT REFCOUNT, PUBSUB CHANNELS, etc..
+     *  - 'hint' is the Redis command infos, not the signature of mix-in method. 
      *
      */
     , info : function ( String cmd ) : Object
