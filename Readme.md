@@ -55,7 +55,7 @@ Syllabus : {
     commands : { .. }
 
     /*
-     * Redis commands categories.
+     * Redis commands categories/keywords.
      */
     , types : { .. }
 
@@ -76,6 +76,7 @@ Syllabus : {
      * Output is:
      *
      * { 
+     *   req: 'PiNg',
      *   name: 'ping',
      *   args: 0,
      *   type: 'connection',
@@ -88,9 +89,11 @@ Syllabus : {
      * }
      *
      * NOTE:
-     * - 'args' refers to the number of arguments expected by the command  mix-in 
-     *    function, not by the original Redis command.
-     * - 'sub' collects command direct child(ren) for commands like: OBJECT REFCOUNT.
+     *  - 'name' is the mix-in method name.
+     *  - 'args' refers to the number of arguments expected by the command  mix-in 
+     *     function, not by the original Redis command.
+     *  - 'sub' collects command direct child(ren) for commands like: OBJECT REFCOUNT.
+     *
      */
     , info : function ( String cmd ) : Object
 
