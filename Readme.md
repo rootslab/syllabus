@@ -8,7 +8,7 @@
 
 > **_Syllabus_**, a collection of mix-ins for __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
-> Now __168__ Redis commands mix-ins are implemented.
+> Now __169__ Redis commands mix-ins are implemented.
 
 ###Install
 
