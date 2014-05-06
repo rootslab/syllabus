@@ -541,11 +541,11 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-'pfadd' : function (  ) : Object
+'pfadd' : function ( Number key | String key, String channel | Array channels ) : Object
 
-'pfcount' : function (  ) : Object
+'pfcount' : function ( Number key | String key, Array keys ) : Object
 
-'pfmerge' : function (  ) : Object
+'pfmerge' : function ( Number dest | String dest, String source | Array sources ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -558,24 +558,24 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-'psubscribe' : function (  ) : Object
+'psubscribe' : function ( String pattern | Array patterns ) : Object
 
 'publish' : function (  ) : Object
 
 'pubsub' : {
 
-    'channels' : function (  ) : Object
+    'channels' : function ( [ String pattern ] ) : Object
 
-    'numpat' : function (  ) : Object
+    'numpat' : function () : Object
 
-    'numsub' : function (  ) : Object
+    'numsub' : function ( String channel | Array channels ) : Object
 }
 
-'punsubscribe' : function (  ) : Object
+'punsubscribe' : function ( String pattern | Array patterns ) : Object
 
-'subscribe' : function (  ) : Object
+'subscribe' : function ( String channel | Array channels ) : Object
 
-'unsubscribe' : function (  ) : Object
+'unsubscribe' : function ( [ String channel | Array channels ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -588,15 +588,15 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-'watch' : function (  ) : Object
+'discard' : function () : Object
 
-'unwatch' : function (  ) : Object
+'exec' : function () : Object
 
-'multi' : function (  ) : Object
+'multi' : function () : Object
 
-'exec' : function (  ) : Object
+'watch' : function ( String key | Array keys ) : Object
 
-'discard' : function (  ) : Object
+'unwatch' : function () : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
