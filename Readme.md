@@ -165,7 +165,7 @@ obj = {
   'bulks' : 2
 
   // original command
-  , 'cmd' : 'PING'
+  , 'cmd' : 'GET'
 
  /*
   * encoded command for the  Redis Protocol,
