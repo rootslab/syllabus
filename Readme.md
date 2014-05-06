@@ -6,7 +6,7 @@
 
 [![NPM](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
-> **_Syllabus_**, a collection of mix-ins to encode  __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
+> **_Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
 > Now __[169](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
@@ -607,7 +607,7 @@ _[Back to Index](#syllabus-commands)_
 
 'psubscribe' : function ( String pattern | Array patterns ) : Object
 
-'publish' : function (  ) : Object
+'publish' : function ( String channel, String message ) : Object
 
 'pubsub' : {
 
