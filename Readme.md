@@ -141,18 +141,18 @@ Syllabus : {
 ###Syllabus Commands
 
 __Types:__
-- [Keys](#keys) : _24 commands_.
-- [Strings](#strings) : _27 commands_.
+- [Keys](#keys) : _23 commands_.
+- [Strings](#strings) : _26 commands_.
 - [Hashes](#hashes) : _14 commands_.
 - [Lists](#lists) : _17 commands_.
 - [Sets](#sets) : _15 commands_.
 - [Sorted Sets](#sorted-sets) : _20 commands_.
 - [HyperLogLog](#hyperloglog) : _3 commands_.
-- [PubSub](#pubsub) : _9 commands_.
+- [PubSub](#pubsub) : _8 commands_.
 - [Transactions](#transactions) : _5 commands_.
-- [Scripting](#scripting) : _7 commands_.
+- [Scripting](#scripting) : _6 commands_.
 - [Connection](#connection) : _5 commands_.
-- [Server](#server) : _31 commands_.
+- [Server](#server) : _27 commands_.
 
 > Every Syllabus command returns an obj/hash:
 
@@ -186,7 +186,7 @@ obj = {
 
 ####KEYS
 
-> _Redis [Keys](http://redis.io/commands#generic), 24 commands_.
+> _Redis [Keys](http://redis.io/commands#generic), 23 commands + 1 empty parent command_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -293,7 +293,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####STRINGS
 
-> _Redis [Strings](http://redis.io/commands#string), 27 commands_.
+> _Redis [Strings](http://redis.io/commands#string), 26 commands + 1 empty parent command_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -552,7 +552,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####PUBSUB
 
-> _Redis [PubSub](http://redis.io/commands#pubsub), 9 commands_.
+> _Redis [PubSub](http://redis.io/commands#pubsub), 8 commands + 1 empty parent command_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -603,7 +603,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####SCRIPTING
 
-> _Redis [Scripting](http://redis.io/commands#scripting), 7 commands_.
+> _Redis [Scripting](http://redis.io/commands#scripting), 6 commands + 1 empty parent command_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -634,41 +634,26 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+'auth' : function ( String password ) : Object
 
-'save' : function (  ) : Object
+'echo' : function ( Number string | String string ) : Object
 
-'select' : function (  ) : Object
+'ping' : function () : Object
 
-'shutdown' : function (  ) : Object
+'quit' : function () : Object
 
-'slaveof' : function (  ) : Object
+'select' : function ( Number db | String db ) : Object
 
-'slowlog' : {
-
-     'get' : function (  ) : Object
-
-    'len' : function (  ) : Object
-
-    'reset' : function (  ) : Object
-}
-
-'sync' : function (  ) : Object
-
-'time' : function (  ){ }
-
-}
 ```
 _[Back to Index](#syllabus-commands)_
 
 ####SERVER
 
-> _Redis [Server](http://redis.io/commands#server), 31 commands_.
+> _Redis [Server](http://redis.io/commands#server), 27 commands + 4 empty parent commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-'auth' : function (  ) : Object
 
 'bgrewriteaof' : function (  ) : Object
 
@@ -711,18 +696,30 @@ _[Back to Index](#syllabus-commands)_
 
 'flushdb' : function (  ) : Object
 
-'echo' : function (  ) : Object
-
 'info' : function (  ) : Object
 
 'lastsave' : function (  ) : Object
 
 'monitor' : function (  ) : Object
 
-'ping' : function (  ) : Object
+'save' : function (  ) : Object
 
-'quit' : function (  ) : Object
+'shutdown' : function (  ) : Object
 
+'slaveof' : function (  ) : Object
+
+'slowlog' : {
+
+    'get' : function (  ) : Object
+
+    'len' : function (  ) : Object
+
+    'reset' : function (  ) : Object
+}
+
+'sync' : function (  ) : Object
+
+'time' : function (  ){ }
 ```
 _[Back to Index](#syllabus-commands)_
 
