@@ -84,19 +84,25 @@ Syllabus : {
      *   cmd: 'PING',
      *   sub: [],
      *   rtype: '+',
-     *   since: '1.0.0',
+     *   since: [ 1, 0, 0 ],
      *   hint: 'PING',
      *   url: 'http://redis.io/commands/ping'
      *   descr: 'Ping the server.'
      * }
      *
      * NOTE:
+     *
      *  - 'name' is the mix-in method name.
+     *
      *  - 'args' refers to the number of arguments expected by the command
      *     mix-in method, not by the original Redis command.
+     *
      *  - 'sub' collects command direct child(ren) for commands like: 
      *     OBJECT REFCOUNT, PUBSUB CHANNELS, etc..
-     *  - 'hint' is the Redis command infos, not the signature of mix-in method. 
+     *
+     *  - 'hint' is the Redis command infos, not the signature of mix-in method.
+     *
+     *  - 'since' indicates the Redis version from which the command is available.
      *
      */
     , info : function ( String cmd )  : Object
