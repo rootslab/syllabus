@@ -192,15 +192,17 @@ obj = {
 
 ```javascript
 
-'del' : function ( String key | Number key | Array keys ) : Object
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'dump' : function ( String key | Number key ) : Object
+'del' : function ( Number key | String key | Array keys ) : Object
 
-'exists' : function ( String key | Number key ) : Object
+'dump' : function ( Number key | String key ) : Object
 
-'expire' : function ( String key | Number key, Number seconds ) : Object
+'exists' : function ( Number key | String key ) : Object
 
-'expireat' : function ( String key | Number key, Number unixtime ) : Object
+'expire' : function ( Number key | String key, Number seconds ) : Object
+
+'expireat' : function ( Number key | String key, Number unixtime ) : Object
 
 'keys' : function ( [ String pattern ] ) : Object
 
@@ -249,6 +251,11 @@ obj = {
 
 /*
  * RESTORE gets a single Buffer as the last argument, like a reply from DUMP.
+ *
+ * Original Redis Command is:
+ *
+ * RESTORE key ttl serialized-value
+ *
  */
 'restore' : function ( String key | Number key, Number ttl, Buffer data ) : Object
 
@@ -298,6 +305,8 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'append' : function (  ) : Object
 
@@ -365,6 +374,8 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
+
 'hdel' : function ( Number key | String key, String field | Array fields ) : Object
 
 'hexists' : function ( Number key | String key, String field ) : Object
@@ -384,7 +395,7 @@ _[Back to Index](#syllabus-commands)_
 'hmget' : function ( Number key | String key, String field | Array fields ) : Object
 
 /*
- * hmset accepts an Array or an Object:
+ * hmset accepts an Array of fields and values or an Object:
  *
  * obj = {
  *   key1 : 'value1'
@@ -396,7 +407,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * HMSET key field value [field value ...]
  */
-'hmset' : function ( Number key | array key, Array kvalues | Object kvalues ) : Object
+'hmset' : function ( Number key | array key, Array fvalues | Object fvalues ) : Object
 
 /*
  * hscan accepts an Array or on option Object:
@@ -429,6 +440,8 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'blpop' : function (  ) : Object
 
@@ -475,15 +488,17 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-'sadd' : function (  ) : Object
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'scard' : function (  ) : Object
+'sadd' : function ( Number key | String key, String member | Array members ) : Object
 
-'sdiff' : function (  ) : Object
+'scard' : function ( Number key | String key ) : Object
 
-'sdiffstore' : function (  ) : Object
+'sdiff' : function ( Number key | String key | Array keys ) : Object
 
-'sinter' : function (  ) : Object
+'sdiffstore' : function (, String key ) : Object
+
+'sinter' : function ( Number dest | String dest , Number key | String key | Array keys ) : Object
 
 'sinterstore' : function (  ) : Object
 
@@ -515,6 +530,8 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'zcount' : function (  ) : Object
 
@@ -567,6 +584,8 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
+
 'pfadd' : function ( Number key | String key, String channel | Array channels ) : Object
 
 'pfcount' : function ( Number key | String key, Array keys ) : Object
@@ -584,6 +603,8 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
+
 'psubscribe' : function ( String pattern | Array patterns ) : Object
 
 'publish' : function (  ) : Object
@@ -599,7 +620,7 @@ _[Back to Index](#syllabus-commands)_
 
 'punsubscribe' : function ( String pattern | Array patterns ) : Object
 
-'subscribe' : function ( String channel | Array channels ) : Object
+'subscribe' : function ( Number channel | String channel | Array channels ) : Object
 
 'unsubscribe' : function ( [ String channel | Array channels ] ) : Object
 
@@ -614,13 +635,15 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
+
 'discard' : function () : Object
 
 'exec' : function () : Object
 
 'multi' : function () : Object
 
-'watch' : function ( String key | Array keys ) : Object
+'watch' : function ( Number key | String key | Array keys ) : Object
 
 'unwatch' : function () : Object
 
@@ -634,6 +657,8 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'eval' : function (  ) : Object
 
@@ -660,6 +685,9 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
+
 'auth' : function ( String password ) : Object
 
 'echo' : function ( Number string | String string ) : Object
@@ -680,6 +708,8 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
+
+// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'bgrewriteaof' : function (  ) : Object
 
