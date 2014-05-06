@@ -202,7 +202,7 @@ obj = {
 
 'expireat' : function ( String key | Number key, Number unixtime ) : Object
 
-'keys' : function ( String pattern ) : Object
+'keys' : function ( [ String pattern ] ) : Object
 
 /*
  * migrate accepts an Array or on option Object:
@@ -365,33 +365,59 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-'hdel' : function (  ) : Object
+'hdel' : function ( Number key | String key, String field | Array fields ) : Object
 
-'hget' : function (  ) : Object
+'hexists' : function ( Number key | String key, String field ) : Object
 
-'hgetall' : function (  ) : Object
+'hget' : function ( Number key | String key, String field ) : Object
 
-'hexists' : function (  ) : Object
+'hgetall' : function ( Number key | String key ) : Object
 
-'hincrby' : function (  ) : Object
+'hincrby' : function ( Number key | String key, String field, Number integer | String integer ) : Object
 
-'hincrbyfloat' : function (  ) : Object
+'hincrbyfloat' : function ( Number key | String key, String field, Number float | String float ) : Object
 
-'hkeys' : function (  ) : Object
+'hkeys' : function ( Number key, String key ) : Object
 
-'hlen' : function (  ) : Object
+'hlen' : function ( Number key, String key ) : Object
 
-'hmget' : function (  ) : Object
+'hmget' : function ( Number key | String key, String field | Array fields ) : Object
 
-'hmset' : function (  ) : Object
+/*
+ * hmset accepts an Array or an Object:
+ *
+ * obj = {
+ *   key1 : 'value1'
+ *   key2 : 'value2'
+ *   ..
+ * }
+ *
+ * Original Redis command is:
+ *
+ * HMSET key field value [field value ...]
+ */
+'hmset' : function ( Number key | array key, Array kvalues | Object kvalues ) : Object
 
-'hscan' : function (  ) : Object
+/*
+ * hscan accepts an Array or on option Object:
+ *
+ * opt = {
+ *   cursor : Number | String
+ *   , match : String
+ *   , count : Number | String
+ * }
+ *
+ * Original Redis command is:
+ *
+ * HSCAN key cursor [MATCH pattern] [COUNT count]
+ */
+'hscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
 
-'hset' : function (  ) : Object
+'hset' : function ( Number key | String key, String field, Number value | String value ) : Object
 
-'hsetnx' : function (  ) : Object
+'hsetnx' : function ( Number key | String key, String field, Number value | String value ) : Object
 
-'hvals' : function (  ) : Object
+'hvals' : function ( Number key | String key ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
