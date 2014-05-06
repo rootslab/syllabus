@@ -6,7 +6,7 @@
 
 [![NPM](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
-> **_Syllabus_**, a collection of mix-ins for __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
+> **_Syllabus_**, a collection of mix-ins to encode  __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
 > Now __[169](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
