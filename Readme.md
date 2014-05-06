@@ -8,7 +8,7 @@
 
 > **_Syllabus_**, a collection of mix-ins for __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
-> Now __169__ Redis commands mix-ins are implemented.
+> Now __[169](#syllabus.commands)__ Redis commands mix-ins are implemented.
 
 ###Install
 
@@ -87,7 +87,8 @@ Syllabus : {
      *   rtype: '+',
      *   since: '1.0.0',
      *   hint: 'PING',
-     *   url: 'http://redis.io/commands/ping' 
+     *   url: 'http://redis.io/commands/ping'
+     *   descr: 'Ping the server.'
      * }
      *
      * NOTE:
@@ -119,6 +120,222 @@ Syllabus : {
      * and of keywords types.
      */
     , size : function () : Number
+}
+```
+
+###Syllabus Redis Commands
+
+<a name="syllabus.commands"/>
+> _Syllabus.commands:_
+
+```javascript
+{   
+    // keys
+    'type' : function(  ){ },
+    'ttl' : function(  ){ },
+    'sort' : function(  ){ },
+    'scan' : function(  ){ },
+    'restore' : function(  ){ },
+    'renamenx' : function(  ){ },
+    'rename' : function(  ){ },
+    'randomkey' : function(  ){ },
+    'pttl' : function(  ){ },
+    'pexpireat' : function(  ){ },
+    'pexpire' : function(  ){ },
+    'persist' : function(  ){ },
+    'object' : {
+        'refcount' : function(  ){ },
+        'encoding' : function(  ){ },
+        'idletime' : function(  ){ }
+    },
+    'move' : function(  ){ },
+    'migrate' : function(  ){ },
+    'keys' : function(  ){ },
+    'expireat' : function(  ){ },
+    'expire' : function(  ){ },
+    'exists' : function(  ){ },
+    'dump' : function(  ){ },
+    'del' : function(  ){ },
+
+     // strings
+    'append' : function(  ){ },
+    'bitcount' : function(  ){ },
+    'bittop' : { 
+        'and' : function(  ){ },
+        'or' : function(  ){ },
+        'xor' : function(  ){ },
+        'not' : function(  ){ }
+    },
+    'bitpos' : function(  ){ },
+    'decr' : function(  ){ },
+    'decrby' : function(  ){ },
+    'get' : function(  ){ },
+    'getbit' : function(  ){ },
+    'getrange' : function(  ){ },
+    'getset' : function(  ){ },
+    'incr' : function(  ){ },
+    'incrby' : function(  ){ },
+    'incrbyfloat' : function(  ){ },
+    'mget' : function(  ){ },
+    'mset' : function(  ){ },
+    'msetnx' : function(  ){ },
+    'psetex' : function(  ){ },
+    'set' : function(  ){ },
+    'setbit' : function(  ){ },
+    'setex' : function(  ){ },
+    'setnx' : function(  ){ },
+    'setrange' : function(  ){ },
+    'strlen' : function(  ){ },
+
+    // hashes
+    'hdel' : function(  ){ },
+    'hget' : function(  ){ },
+    'hgetall' : function(  ){ },
+    'hexists' : function(  ){ },
+    'hincrby' : function(  ){ },
+    'hincrbyfloat' : function(  ){ },
+    'hkeys' : function(  ){ },
+    'hlen' : function(  ){ },
+    'hmget' : function(  ){ },
+    'hmset' : function(  ){ },
+    'hscan' : function(  ){ },
+    'hset' : function(  ){ },
+    'hsetnx' : function(  ){ },
+    'hvals' : function(  ){ },
+
+    // lists
+    'blpop' : function(  ){ },
+    'brpop' : function(  ){ },
+    'brpoplpush' : function(  ){ },
+    'lindex' : function(  ){ },
+    'linsert' : function(  ){ },
+    'llen' : function(  ){ },
+    'lpop' : function(  ){ },
+    'lpush' : function(  ){ },
+    'lpushx' : function(  ){ },
+    'lrange' : function(  ){ },
+    'lrem' : function(  ){ },
+    'lset' : function(  ){ },
+    'ltrim' : function(  ){ },
+    'rpop' : function(  ){ },
+    'rpoplpush' : function(  ){ },
+    'rpush' : function(  ){ },
+    'rpushx' : function(  ){ },
+
+    // sets
+    'sadd' : function(  ){ },
+    'scard' : function(  ){ },
+    'sdiff' : function(  ){ },
+    'sdiffstore' : function(  ){ },
+    'sinter' : function(  ){ },
+    'sinterstore' : function(  ){ },
+    'sismember' : function(  ){ },
+    'smove' : function(  ){ },
+    'smembers' : function(  ){ },
+    'spop' : function(  ){ },
+    'srandmember' : function(  ){ },
+    'srem' : function(  ){ },
+    'sscan' : function(  ){ },
+    'sunion' : function(  ){ },
+    'sunionstore' : function(  ){ },
+
+    // hyperloglog
+    'pfadd' : function(  ){ },
+    'pfcount' : function(  ){ },
+    'pfmerge' : function(  ){ },
+
+    // sorted sets
+    'zcount' : function(  ){ },
+    'zadd' : function(  ){ },
+    'zcard' : function(  ){ },
+    'zincrby' : function(  ){ },
+    'zinterstore' : function(  ){ },
+    'zlexcount' : function(  ){ },
+    'zrevrank' : function(  ){ },
+    'zrange' : function(  ){ },
+    'zrangebylex' : function(  ){ },
+    'zrangebyscore' : function(  ){ },
+    'zrank' : function(  ){ },
+    'zrem' : function(  ){ },
+    'zremrangebylex' : function(  ){ },
+    'zremrangebyrank' : function(  ){ },
+    'zremrangebyscore' : function(  ){ },
+    'zrevrange' : function(  ){ },
+    'zrevrangebyscore' : function(  ){ },
+    'zscan' : function(  ){ },
+    'zscore' : function(  ){ },
+    'zunionstore' : function(  ){ },
+
+    // pubsub
+    'psubscribe' : function(  ){ },
+    'publish' : function(  ){ },
+    'pubsub' : {
+        'channels' : function(  ){ },
+        'numsub' : function(  ){ },
+        'numpat' : function(  ){ },
+    },
+    'punsubscribe' : function(  ){ },
+    'subscribe' : function(  ){ },
+    'unsubscribe' : function(  ){ },
+    
+    // transactions
+    'watch' : function(  ){ },
+    'unwatch' : function(  ){ },
+    'multi' : function(  ){ },
+    'exec' : function(  ){ },
+    'discard' : function(  ){ },
+
+    // scripting
+    'eval' : function(  ){ },
+    'evalsha' : function(  ){ },
+    'script' : {
+        'exists' : function(  ){ },
+        'flush' : function(  ){ },
+        'kill' : function(  ){ },
+        'load' : function(  ){ },
+    },
+
+    // server
+    'auth' : function(  ){ },
+    'bgrewriteaof' : function(  ){ },
+    'bgsave' : function(  ){ },
+    'client' : {
+        'getname' : function(  ){ },
+        'kill' : function(  ){ },
+        'list' : function(  ){ },
+        'pause' : function(  ){ },
+        'setname' : function(  ){ },
+    },
+    'config' : {
+        'get' : function(  ){ },
+        'resetstat' : function(  ){ },
+        'rewrite' : function(  ){ },
+        'set' : function(  ){ },
+    },
+    'dbsize' : function(  ){ },
+    'debug' : {
+        'object' : function(  ){ }, 
+        'segfault' : function(  ){ },
+    },
+    'flushall' : function(  ){ },
+    'flushdb' : function(  ){ },
+    'echo' : function(  ){ },
+    'info' : function(  ){ },
+    'lastsave' : function(  ){ },
+    'monitor' : function(  ){ },
+    'ping' : function(  ){ },
+    'quit' : function(  ){ },
+    'save' : function(  ){ },
+    'select' : function(  ){ },
+    'shutdown' : function(  ){ },
+    'slaveof' : function(  ){ },
+    'slowlog' : {
+        'get' : function(  ){ },
+        'len' : function(  ){ },
+        'reset' : function(  ){ },
+    },
+    'sync' : function(  ){ },
+    'time' : function(  ){ }
 }
 ```
 
