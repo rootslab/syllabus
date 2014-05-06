@@ -1,8 +1,9 @@
 var log = console.log
     , assert = require( 'assert' )
     , util = require( 'util' )
-    , Syllabus = require( '../' )
+    , Syllabus = require( '../' )( true )
     , commands = Syllabus.commands
+    , types = Syllabus.types
     ;
 
-log( commands );
+log( util.inspect( Syllabus, false, 3, true ) );
