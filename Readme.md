@@ -104,6 +104,15 @@ Syllabus : {
      *
      *  - 'since' indicates the Redis version from which the command is available.
      *
+     *  - 'rtype' is the reply type expected from Redis, when the command will
+     *     be write to socket.
+     *     Redis reply types are:
+     *       - ':' or integer reply.
+     *       - '+' or simple string reply.
+     *       - '$' or bulk string reply.
+     *       - '*' or multibulk reply.
+     *       - '-' or error reply.
+     *
      */
     , info : function ( String cmd )  : Object
 
@@ -177,24 +186,26 @@ obj = {
 
 ####KEYS
 
-> _Redis [Keys](http://redis.io/commands#generic), 24 commands_. Arguments within [ ] are optional.
+> _Redis [Keys](http://redis.io/commands#generic), 24 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
-'del' : function ( String key | Array keys ) : Object
+'del' : function ( String key | Number key | Array keys ) : Object
 
-'dump' : function ( String key ) : Object
+'dump' : function ( String key | Number key ) : Object
 
-'exists' : function ( String key ) : Object
+'exists' : function ( String key | Number key ) : Object
 
-'expire' : function ( String key, Number seconds ) : Object
+'expire' : function ( String key | Number key, Number seconds ) : Object
 
-'expireat' : function ( String key, Number unixtime ) : Object
+'expireat' : function ( String key | Number key, Number unixtime ) : Object
 
 'keys' : function ( String pattern ) : Object
 
 /*
- * migrate accepts an Array or on option object:
+ * migrate accepts an Array or on option Object:
  *
  * opt = {
  *   host : String
@@ -209,49 +220,82 @@ obj = {
  * 'MIGRATE host port key destination-db timeout [COPY] [REPLACE]'
  *
  */
-'migrate' : function( String key, Array args | Object opt ) : Object
+'migrate' : function( String key | Number key, Array args | Object opt ) : Object
 
-'move' : function (  ) : Object
+'move' : function ( String key | Number key, String db | Number db ) : Object
 
 'object' : {
 
-    'encoding' : function (  ) : Object
+    'encoding' : function ( String key | Number key ) : Object
 
-    'idletime' : function (  ) : Object
+    'idletime' : function ( String key | Number key ) : Object
 
-    'refcount' : function (  ) : Object
+    'refcount' : function ( String key | Number key ) : Object
 }
 
-'persist' : function (  ) : Object
+'persist' : function ( String key | Number key ) : Object
 
-'pexpire' : function (  ) : Object
+'pexpire' : function ( String key | Number key, Number millis ) : Object
 
-'pexpireat' : function (  ) : Object
+'pexpireat' : function ( String key | Number key, Number unixtime ) : Object
 
-'pttl' : function (  ) : Object
+'pttl' : function ( String key | Number key ) : Object
 
-'randomkey' : function (  ) : Object
+'randomkey' : function () : Object
 
-'rename' : function (  ) : Object
+'rename' : function ( String key | Number key, String name | Number name ) : Object
 
-'renamenx' : function (  ) : Object
+'renamenx' : function ( String key | Number key, String name | Number name ) : Object
 
-'restore' : function (  ) : Object
+/*
+ * RESTORE gets a single Buffer as the last argument, like a reply from DUMP.
+ */
+'restore' : function ( String key | Number key, Number ttl, Buffer data ) : Object
 
-'scan' : function (  ) : Object
+/*
+ * scan accepts an Array or on option Object:
+ *
+ * opt = {
+ *   cursor : Number | String
+ *   , match : String
+ *   , count : Number | String
+ * }
+ *
+ * Original Redis command is:
+ *
+ * SCAN cursor [MATCH pattern] [COUNT count]
+ */
+'scan' : function ( String cursor | Number cursor, Object opt | Array args ) : Object
 
-'sort' : function (  ) : Object
+/*
+ * sort accepts an Array or on option Object:
+ *
+ * opt = {
+ *   by : String
+ *   , limit : Array
+ *   , get : Array
+ *   , order : String ( ASC | DESC | ALPHA )
+ *   , store : Number | String
+ * }
+ * 
+ * Original Redis command is:
+ *
+ * SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]
+ */
+'sort' : function ( String key | Number key, Object opt | Array args ) : Object
 
-'ttl' : function (  ) : Object
+'ttl' : function ( String key | Number key ) : Object
 
-'type' : function (  ) : Object
+'type' : function ( String key | Number key ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
 
 ####STRINGS
 
-> _Redis [Strings](http://redis.io/commands#string), 27 commands_. Arguments within [ ] are optional.
+> _Redis [Strings](http://redis.io/commands#string), 27 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -315,7 +359,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####HASHES
 
-> _Redis [Hashes](http://redis.io/commands#hash), 14 commands_. Arguments within [ ] are optional.
+> _Redis [Hashes](http://redis.io/commands#hash), 14 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -352,7 +398,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####LISTS
 
-> _Redis [Lists](http://redis.io/commands#list), 17 commands_. Arguments within [ ] are optional.
+> _Redis [Lists](http://redis.io/commands#list), 17 commands_. 
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -395,7 +443,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####SETS
 
-> _Redis [Sets](http://redis.io/commands#set), 15 commands_. Arguments within [ ] are optional.
+> _Redis [Sets](http://redis.io/commands#set), 15 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -434,7 +484,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####SORTED SETS
 
-> _Redis [Sorted Sets](http://redis.io/commands#sorted_set), 20 commands_. Arguments within [ ] are optional.
+> _Redis [Sorted Sets](http://redis.io/commands#sorted_set), 20 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -483,7 +535,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####HYPERLOGLOG
 
-> _Redis [HyperLogLog](http://redis.io/commands#hyperloglog), 3 commands_. Arguments within [ ] are optional.
+> _Redis [HyperLogLog](http://redis.io/commands#hyperloglog), 3 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -498,7 +552,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####PUBSUB
 
-> _Redis [PubSub](http://redis.io/commands#pubsub), 9 commands_. Arguments within [ ] are optional.
+> _Redis [PubSub](http://redis.io/commands#pubsub), 9 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -526,7 +582,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####TRANSACTIONS
 
-> _Redis [Transactions](http://redis.io/commands#transactions), 5 commands_. Arguments within [ ] are optional.
+> _Redis [Transactions](http://redis.io/commands#transactions), 5 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -545,7 +603,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####SCRIPTING
 
-> _Redis [Scripting](http://redis.io/commands#scripting), 7 commands_. Arguments within [ ] are optional.
+> _Redis [Scripting](http://redis.io/commands#scripting), 7 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -569,7 +629,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####CONNECTION
 
-> _Redis [Connection](http://redis.io/commands#connection), 5 commands_. Arguments within [ ] are optional.
+> _Redis [Connection](http://redis.io/commands#connection), 5 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 
@@ -600,7 +662,9 @@ _[Back to Index](#syllabus-commands)_
 
 ####SERVER
 
-> _Redis [Server](http://redis.io/commands#server), 31 commands_. Arguments within [ ] are optional.
+> _Redis [Server](http://redis.io/commands#server), 31 commands_.
+
+> Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
 

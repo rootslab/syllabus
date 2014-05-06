@@ -1,6 +1,6 @@
 {
   "name": "syllabus",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Syllabus, a collection of mix-ins for Redis commands.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
