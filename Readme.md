@@ -443,39 +443,39 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'blpop' : function (  ) : Object
+'blpop' : function ( Number key | String key, Number timeout | String timeout ) : Object
 
-'brpop' : function (  ) : Object
+'brpop' : function ( Number key | String key, Number timeout | String timeout ) : Object
 
-'brpoplpush' : function (  ) : Object
+'brpoplpush' : function ( Number src | String src, Number dest | String dest, Number timeout | String timeout ) : Object
 
-'lindex' : function (  ) : Object
+'lindex' : function ( Number key | String key, Number index | String index ) : Object
 
-'linsert' : function (  ) : Object
+'linsert' : function ( Number key | String key, String pos, Number pivot | String pivot, Number val | String val ) : Object
 
-'llen' : function (  ) : Object
+'llen' : function ( Number key | String key ) : Object
 
-'lpop' : function (  ) : Object
+'lpop' : function ( Number key | String key ) : Object
 
-'lpush' : function (  ) : Object
+'lpush' : function ( Number src | String src, String value | Array values ) : Object
 
-'lpushx' : function (  ) : Object
+'lpushx' : function ( Number src | String src, String value ) : Object
 
-'lrange' : function (  ) : Object
+'lrange' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
 
-'lrem' : function (  ) : Object
+'lrem' : function (  Number key | String key, Number count | String count, Number val | String val ) : Object
 
-'lset' : function (  ) : Object
+'lset' : function ( Number key | String key, Number index | String index, Number val | String val ) : Object
 
-'ltrim' : function (  ) : Object
+'ltrim' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
 
-'rpop' : function (  ) : Object
+'rpop' : function ( Number key | String key ) : Object
 
-'rpoplpush' : function (  ) : Object
+'rpoplpush' : function ( Number src | String src, Number dest | String dest ) : Object
 
-'rpush' : function (  ) : Object
+'rpush' : function ( Number src | String src, String value | Array values ) : Object
 
-'rpushx' : function (  ) : Object
+'rpushx' : function ( Number src | String src, Number value | String value ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
