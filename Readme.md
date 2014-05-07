@@ -763,71 +763,71 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'bgrewriteaof' : function (  ) : Object
+'bgrewriteaof' : function () : Object
 
-'bgsave' : function (  ) : Object
+'bgsave' : function () : Object
 
 'client' : {
 
-    'getname' : function (  ) : Object
+    'getname' : function () : Object
 
-    'kill' : function (  ) : Object
+    'kill' : function ( Number key | String key, Number ip | String ip, Number port | String port ) : Object
 
-    'list' : function (  ) : Object
+    'list' : function () : Object
 
-    'pause' : function (  ) : Object
+    'pause' : function ( Number millis | String millis ) : Object
 
-    'setname' : function (  ) : Object
+    'setname' : function ( Number name | String name ) : Object
 }
 
 'config' : {
 
-    'get' : function (  ) : Object
+    'get' : function ( String param ) : Object
 
-    'resetstat' : function (  ) : Object
+    'resetstat' : function () : Object
 
-    'rewrite' : function (  ) : Object
+    'rewrite' : function () : Object
 
-    'set' : function (  ) : Object
+    'set' : function ( String param, Number value | String value ) : Object
 }
 
-'dbsize' : function (  ) : Object
+'dbsize' : function () : Object
 
 'debug' : {
 
-    'object' : function (  ) : Object 
+    'object' : function ( Number key | String key ) : Object 
 
-    'segfault' : function (  ) : Object
+    'segfault' : function () : Object
 }
 
-'flushall' : function (  ) : Object
+'flushall' : function () : Object
 
-'flushdb' : function (  ) : Object
+'flushdb' : function () : Object
 
-'info' : function (  ) : Object
+'info' : function ( [ String section ] ) : Object
 
-'lastsave' : function (  ) : Object
+'lastsave' : function () : Object
 
-'monitor' : function (  ) : Object
+'monitor' : function () : Object
 
-'save' : function (  ) : Object
+'save' : function () : Object
 
-'shutdown' : function (  ) : Object
+'shutdown' : function ( [ String opt ] ) : Object
 
-'slaveof' : function (  ) : Object
+'slaveof' : function ( String host, Number port | String port ) : Object
 
 'slowlog' : {
 
-    'get' : function (  ) : Object
+    'get' : function ( Number integer | String integer ) : Object
 
-    'len' : function (  ) : Object
+    'len' : function () : Object
 
-    'reset' : function (  ) : Object
+    'reset' : function () : Object
 }
 
-'sync' : function (  ) : Object
+'sync' : function () : Object
 
-'time' : function (  ){ }
+'time' : function () : Object
 ```
 _[Back to Index](#syllabus-commands)_
 
