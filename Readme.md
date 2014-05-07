@@ -766,19 +766,33 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'eval' : function (  ) : Object
+/*
+ * eval accepts 2 Arrays of keys and args.
+ *
+ * Original Redis command is:
+ *
+ * EVAL script numkeys key [key ...] arg [arg ...]
+ */
+'eval' : function ( String script, Array keys, Array args ) : Object
 
-'evalsha' : function (  ) : Object
+/*
+ * evalsha accepts 2 Arrays of keys and args.
+ *
+ * Original Redis command is:
+ *
+ * EVALSHA sha1 numkeys key [key ...] arg [arg ...]
+ */
+'evalsha' : function ( String sha, Array keys, Array args ) : Object
 
 'script' : {
 
-    'exists' : function (  ) : Object
+    'exists' : function ( String key | Array keys ) : Object
 
-    'flush' : function (  ) : Object
+    'flush' : function () : Object
 
-    'kill' : function (  ) : Object
+    'kill' : function () : Object
 
-    'load' : function (  ) : Object
+    'load' : function ( String key ) : Object
 }
 
 ```
