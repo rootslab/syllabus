@@ -463,7 +463,7 @@ _[Back to Index](#syllabus-commands)_
 
 'lrange' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
 
-'lrem' : function (  Number key | String key, Number count | String count, Number val | String val ) : Object
+'lrem' : function ( Number key | String key, Number count | String count, Number val | String val ) : Object
 
 'lset' : function ( Number key | String key, Number index | String index, Number val | String val ) : Object
 
@@ -496,29 +496,44 @@ _[Back to Index](#syllabus-commands)_
 
 'sdiff' : function ( Number key | String key | Array keys ) : Object
 
-'sdiffstore' : function (, String key ) : Object
+'sdiffstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
-'sinter' : function ( Number dest | String dest , Number key | String key | Array keys ) : Object
+'sinter' : function ( Number key | String key | Array keys ) : Object
 
-'sinterstore' : function (  ) : Object
+'sinterstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
-'sismember' : function (  ) : Object
+'sismember' : function ( Number key | String key, String member | Array members ) : Object
 
-'smove' : function (  ) : Object
+'smove' : function ( Number src | String src, Number dest | String dest, Number member | String member ) : Object
 
-'smembers' : function (  ) : Object
+'smembers' : function ( Number key | String key ) : Object
 
-'spop' : function (  ) : Object
+'spop' : function ( Number key | String key ) : Object
 
-'srandmember' : function (  ) : Object
+'srandmember' : function ( Number key | String key, Number count | String count ) : Object
 
-'srem' : function (  ) : Object
+'srem' : function ( Number key | String key, Number member | String members | Array members ) : Object
+
+/*
+ * sscan accepts an Array or on option Object:
+ *
+ * opt = {
+ *   cursor : Number | String
+ *   , match : String
+ *   , count : Number | String
+ * }
+ *
+ * Original Redis command is:
+ *
+ * SSCAN key cursor [MATCH pattern] [COUNT count]
+ */
+'sscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
 
 'sscan' : function (  ) : Object
 
-'sunion' : function (  ) : Object
+'sunion' : function ( Number key | String key | Array keys ) : Object
 
-'sunionstore' : function (  ) : Object
+'sunionstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
