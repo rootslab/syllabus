@@ -675,7 +675,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * Original Redis command is:
  *
- * ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+ * ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
  */
 'zunionstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate ] ] ) : Object
 
