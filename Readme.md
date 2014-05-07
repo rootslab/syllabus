@@ -222,32 +222,32 @@ obj = {
  * 'MIGRATE host port key destination-db timeout [COPY] [REPLACE]'
  *
  */
-'migrate' : function( String key | Number key, Array args | Object opt ) : Object
+'migrate' : function( Number key | String key, Array args | Object opt ) : Object
 
-'move' : function ( String key | Number key, String db | Number db ) : Object
+'move' : function ( Number key | String key, String db | Number db ) : Object
 
 'object' : {
 
-    'encoding' : function ( String key | Number key ) : Object
+    'encoding' : function ( Number key | String key ) : Object
 
-    'idletime' : function ( String key | Number key ) : Object
+    'idletime' : function ( Number key | String key ) : Object
 
-    'refcount' : function ( String key | Number key ) : Object
+    'refcount' : function ( Number key | String key ) : Object
 }
 
-'persist' : function ( String key | Number key ) : Object
+'persist' : function ( Number key | String key ) : Object
 
-'pexpire' : function ( String key | Number key, Number millis ) : Object
+'pexpire' : function ( Number key | String key, Number millis ) : Object
 
-'pexpireat' : function ( String key | Number key, Number unixtime ) : Object
+'pexpireat' : function ( Number key | String key, Number unixtime ) : Object
 
-'pttl' : function ( String key | Number key ) : Object
+'pttl' : function ( Number key | String key ) : Object
 
 'randomkey' : function () : Object
 
-'rename' : function ( String key | Number key, String name | Number name ) : Object
+'rename' : function ( Number key | String key, String name | Number name ) : Object
 
-'renamenx' : function ( String key | Number key, String name | Number name ) : Object
+'renamenx' : function ( Number key | String key, String name | Number name ) : Object
 
 /*
  * RESTORE gets a single Buffer as the last argument, like a reply from DUMP.
@@ -257,7 +257,7 @@ obj = {
  * RESTORE key ttl serialized-value
  *
  */
-'restore' : function ( String key | Number key, Number ttl, Buffer data ) : Object
+'restore' : function ( Number key | String key, Number ttl, Buffer data ) : Object
 
 /*
  * scan accepts an Array or on option Object:
@@ -289,11 +289,11 @@ obj = {
  *
  * SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]
  */
-'sort' : function ( String key | Number key, Object opt | Array args ) : Object
+'sort' : function ( Number key | String key, Object opt | Array args ) : Object
 
-'ttl' : function ( String key | Number key ) : Object
+'ttl' : function ( Number key | String key ) : Object
 
-'type' : function ( String key | Number key ) : Object
+'type' : function ( Number key | String key ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -308,60 +308,99 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'append' : function (  ) : Object
+'append' : function ( Number key | String key, Number value | String value ) : Object
 
-'bitcount' : function (  ) : Object
+'bitcount' : function ( Number key | String key [, Array range ] ) : Object
 
 'bittop' : { 
 
-    'and' : function (  ) : Object
+    'and' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
 
-    'not' : function (  ) : Object
+    'not' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
 
-    'or' : function (  ) : Object
+    'or' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
 
-    'xor' : function (  ) : Object
+    'xor' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
 }
 
-'bitpos' : function (  ) : Object
+'bitpos' : function ( Number key | String key, Number pos | String pos [, Array range ] ) : Object
 
-'decr' : function (  ) : Object
+'decr' : function ( Number key | String key ) : Object
 
-'decrby' : function (  ) : Object
+'decrby' : function ( Number key | String key, Number integer | String integer ) : Object
 
-'get' : function (  ) : Object
+'get' : function ( Number key | String key ) : Object
 
-'getbit' : function (  ) : Object
+'getbit' : function ( Number key | String key, Number offset | String offset ) : Object
 
-'getrange' : function (  ) : Object
+'getrange' : function ( Number key | String key, String start | Number start, String end | Number end ) : Object
 
-'getset' : function (  ) : Object
+'getset' : function ( Number key | String key, Number value | String value ) : Object
 
-'incr' : function (  ) : Object
+'incr' : function ( Number key | String key ) : Object
 
-'incrby' : function (  ) : Object
+'incrby' : function ( Number key | String key, Number integer | String integer ) : Object
 
-'incrbyfloat' : function (  ) : Object
+'incrbyfloat' : function ( Number key | String key, String float | Number float ) : Object
 
-'mget' : function (  ) : Object
+'mget' : function ( Number key | String key | Array keys ) : Object
 
-'mset' : function (  ) : Object
+/*
+ * mset accepts an Array of fields and values or an Object:
+ *
+ * obj = {
+ *   key1 : 'value1'
+ *   key2 : 'value2'
+ *   ..
+ * }
+ *
+ * Original Redis command is:
+ *
+ * MSET key value [key value ...]
+ */
+'mset' : function ( Array args | Object fvalues ) : Object
 
-'msetnx' : function (  ) : Object
+/*
+ * msetnx accepts an Array of fields and values or an Object:
+ *
+ * obj = {
+ *   key1 : 'value1'
+ *   key2 : 'value2'
+ *   ..
+ * }
+ *
+ * Original Redis command is:
+ *
+ * MSETNX key value [key value ...]
+ */
+'msetnx' : function ( Array args | Object fvalues ) : Object
 
-'psetex' : function (  ) : Object
+'psetex' : function ( Number key | String key, String millis | Number millis, Number val | String val ) : Object
 
-'set' : function (  ) : Object
+/*
+ * set accepts an Array or on option Object:
+ *
+ * opt = {
+ *   ex : String | Number
+ *   , px : String | Number
+ *   , check : String ( NX | XX )
+ * }
+ * 
+ * Original Redis command is:
+ *
+ * SET key value [EX seconds] [PX milliseconds] [NX|XX]
+ */
+'set' : function ( Number key | String key, Number val | String val [, Array args | Object options ] ) : Object
 
-'setbit' : function (  ) : Object
+'setbit' : function ( Number key | String key, Number offset | String offset, Number val | String val ) : Object
 
-'setex' : function (  ) : Object
+'setex' : function ( Number key | String key, Number secs | String secs, Number value | String value ) : Object
 
-'setnx' : function (  ) : Object
+'setnx' : function ( Number key | String key, Number value | String value ) : Object
 
-'setrange' : function (  ) : Object
+'setrange' : function ( Number start | String start, Number offset | String offset, Number val | String val ) : Object
 
-'strlen' : function (  ) : Object
+'strlen' : function ( Number key | String key ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
