@@ -388,9 +388,9 @@ _[Back to Index](#syllabus-commands)_
 
 'hincrbyfloat' : function ( Number key | String key, String field, Number float | String float ) : Object
 
-'hkeys' : function ( Number key, String key ) : Object
+'hkeys' : function ( Number key | String key ) : Object
 
-'hlen' : function ( Number key, String key ) : Object
+'hlen' : function ( Number key | String key ) : Object
 
 'hmget' : function ( Number key | String key, String field | Array fields ) : Object
 
@@ -528,8 +528,6 @@ _[Back to Index](#syllabus-commands)_
  * SSCAN key cursor [MATCH pattern] [COUNT count]
  */
 'sscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
-
-'sscan' : function (  ) : Object
 
 'sunion' : function ( Number key | String key | Array keys ) : Object
 
