@@ -585,45 +585,99 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'zcount' : function (  ) : Object
+/*
+ * zadd accepts an Array of scores and members or an Object:
+ *
+ * obj = {
+ *   '1.5' : 'member1'
+ *   '2' : 'member2'
+ *   ..
+ * }
+ *
+ * Original Redis command is:
+ *
+ * ZADD key score member [score member ...]
+ */
+'zadd' : function ( Number key | string key, Array args | Object scores ) : Object
 
-'zadd' : function (  ) : Object
+'zcard' : function ( Number key | String key ) : Object
 
-'zcard' : function (  ) : Object
+'zcount' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
 
-'zincrby' : function (  ) : Object
+'zincrby' : function ( Number key | String key, Number integer | String integer, Number member | String member ) : Object
 
-'zinterstore' : function (  ) : Object
+/*
+ * zinterstore optionally accepts an array of weights and an aggregate string option.
+ *
+ * Original Redis command is:
+ *
+ * ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+ */
+'zinterstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate ] ] ) : Object
 
-'zlexcount' : function (  ) : Object
+'zlexcount' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
 
-'zrevrank' : function (  ) : Object
+'zrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores ] ) : Object
 
-'zrange' : function (  ) : Object
+/*
+ * zrangebylex optionally accepts a limit array containing an offset and a count.
+ *
+ * Original Redis command is:
+ *
+ * ZRANGEBYLEX key min max [LIMIT offset count]
+ */
+'zrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max [, Array limit ] ) : Object
 
-'zrangebylex' : function (  ) : Object
+'zrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max [, Boolean withscores ] ) : Object
 
-'zrangebyscore' : function (  ) : Object
+'zrank' : function ( Number key | String key, Number member | String member ) : Object
 
-'zrank' : function (  ) : Object
+'zrem' : function ( Number key | String key, Number member | String member | Array members ) : Object ) : Object
 
-'zrem' : function (  ) : Object
+'zremrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
 
-'zremrangebylex' : function (  ) : Object
+'zremrangebyrank' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
 
-'zremrangebyrank' : function (  ) : Object
+'zremrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
 
-'zremrangebyscore' : function (  ) : Object
+'zrevrank' : function ( Number key | String key, Number member | String member ) : Object
 
-'zrevrange' : function (  ) : Object
+'zrevrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores ] ) : Object
 
-'zrevrangebyscore' : function (  ) : Object
+/*
+ * zrevrangebyscore optionally accepts a withscores boolean and a limit array containing an offset and a count.
+ *
+ * Original Redis command is:
+ *
+ * ZREVRANGEBYSCORE key max min [WITHSCORES] [LIMIT offset count]
+ */
+'zrevrangebyscore' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores [, Array limit ] ] ) : Object
 
-'zscan' : function (  ) : Object
+/*
+ * zscan accepts an Array or on option Object:
+ *
+ * opt = {
+ *   cursor : Number | String
+ *   , match : String
+ *   , count : Number | String
+ * }
+ *
+ * Original Redis command is:
+ *
+ * ZSCAN key cursor [MATCH pattern] [COUNT count]
+ */
+'zscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
 
-'zscore' : function (  ) : Object
+'zscore' : function ( Number key | String key, Number member | String member ) : Object
 
-'zunionstore' : function (  ) : Object
+/*
+ * zunionstore optionally accepts an array of weights and an aggregate string option.
+ *
+ * Original Redis command is:
+ *
+ * ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+ */
+'zunionstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate ] ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
