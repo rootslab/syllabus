@@ -1,5 +1,4 @@
 var log = console.log
-    , assert = require( 'assert' )
     , util = require( 'util' )
     // get Syllabus in develop mode
     , Syllabus = require( '../' )( true )

@@ -272,7 +272,7 @@ obj = {
  *
  * SCAN cursor [MATCH pattern] [COUNT count]
  */
-'scan' : function ( String cursor | Number cursor, Object opt | Array args ) : Object
+'scan' : function ( Number cursor | String cursor, Object opt | Array args ) : Object
 
 /*
  * sort accepts an Array or on option Object:
@@ -314,13 +314,13 @@ _[Back to Index](#syllabus-commands)_
 
 'bittop' : { 
 
-    'and' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
+    'and' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
-    'not' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
+    'not' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
-    'or' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
+    'or' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 
-    'xor' : function ( String dest | Number dest, Number key | String key | Array keys ) : Object
+    'xor' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
 }
 
 'bitpos' : function ( Number key | String key, Number pos | String pos [, Array range ] ) : Object
@@ -841,6 +841,14 @@ _[Back to Index](#syllabus-commands)_
 
     'kill' : function ( Number key | String key, Number ip | String ip, Number port | String port ) : Object
 
+    /*
+     * The fn utility returned by the #list mix-in, is able to convert
+     * the reply to a list/array of hashes/objects, each listing infos 
+     * for a distinct client.
+     *
+     * See http://redis.io/commands/client-list for a full explanation
+     * of properties returned.
+     */
     'list' : function () : Object
 
     'pause' : function ( Number millis | String millis ) : Object
