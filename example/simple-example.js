@@ -1,3 +1,9 @@
+#!/usr/bin/env node
+
+/* 
+ * Syllabus simple example
+ */
+
 var log = console.log
     , util = require( 'util' )
     // get Syllabus in develop mode

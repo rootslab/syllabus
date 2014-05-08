@@ -1,3 +1,9 @@
+#!/usr/bin/env node
+
+/* 
+ * Syllabus parse CLIENT LIST reply example
+ */
+
 var log = console.log
     , util = require( 'util' )
     // get Syllabus in develop mode

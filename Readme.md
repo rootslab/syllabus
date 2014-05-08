@@ -421,6 +421,20 @@ _[Back to Index](#syllabus-commands)_
 
 'hget' : function ( Number key | String key, String field ) : Object
 
+/*
+ * The fn utility returned by the #hgetall mix-in, is able to
+ * recursively convert the array/list reply to an obj/hash.
+ * 
+ * NOTE: utility fn is Bolgia#toHash, optionally it accepts
+ * 3 further args:
+ *
+ * toHash( Array arr [, Boolean recur [, Object dest [, Boolean convert ] ] ] )
+ *
+ * - 'recur' id for de/activating recursion on nested arrays.
+ * - 'dest' Object could be null, or an object/hast to populate.
+ * - 'convert' enables automatic Buffer to String conversion, and
+ *    String to Number conversion when it's possible.
+ */
 'hgetall' : function ( Number key | String key ) : Object
 
 'hincrby' : function ( Number key | String key, String field, Number integer | String integer ) : Object
@@ -431,6 +445,11 @@ _[Back to Index](#syllabus-commands)_
 
 'hlen' : function ( Number key | String key ) : Object
 
+ /*
+  * The utility fn returned by the #hmget mix-in, is able to
+  * recursively convert the array/list reply to an obj/hash.
+  * See #hgetall about Bolgia#toHash.
+  */
 'hmget' : function ( Number key | String key, String field | Array fields ) : Object
 
 /*
@@ -847,7 +866,7 @@ _[Back to Index](#syllabus-commands)_
      * for a distinct client.
      *
      * See http://redis.io/commands/client-list for a full explanation
-     * of properties returned.
+     * of properties.
      */
     'list' : function () : Object
 
@@ -857,7 +876,12 @@ _[Back to Index](#syllabus-commands)_
 }
 
 'config' : {
-
+    /*
+     * The utility fn returned by the #config.get mix-in,
+     * converts the array/list reply to an obj/hash, it
+     * converts ASCII Strings numbers to Numbers and 
+     * strings 'yes' and 'no' to Booleans true/false.
+     */
     'get' : function ( String param ) : Object
 
     'resetstat' : function () : Object
@@ -880,6 +904,16 @@ _[Back to Index](#syllabus-commands)_
 
 'flushdb' : function () : Object
 
+/*
+ * The fn utility returned by the #info mix-in, is able to convert the
+ * reply to a 2-level deep hash, first level properties are Sections,
+ * at the second level there are section properties.
+ *
+ * See http://redis.io/commands/info for a full explanation of sections
+ * and properties.
+ *
+ * NOTE: The first argument of the utility fn could be a Buffer or a String.
+ */
 'info' : function ( [ String section ] ) : Object
 
 'lastsave' : function () : Object
