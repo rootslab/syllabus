@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "abaco" : ">=1.8.2",
-    "bolgia" : ">=2.4.1",
+    "bolgia" : ">=2.5.0",
     "sermone" : ">=1.4.0"
     },
   "devDependencies": {},
