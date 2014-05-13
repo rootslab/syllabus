@@ -32,11 +32,15 @@ $ npm test
 ```
 ###Constructor
 
-> Create an instance. Optionally it is possible to enable
-> development / informational mode, with a Boolean true.
+> Create an instance.
+> __Optionally__ it is possible to:
+  - enable development / informational mode, with a boolean.
+  - enable development mode and restrict commands available for a
+    particular __Redis__ version, passing a __Semver__ string
+    like __"1.0.0'__.
 
 ```javascript
-var s = Syllabus( [ Boolean develop ] )
+var s = Syllabus( [ Boolean develop | String semver ] )
 ```
 
 ###Sample Usage
@@ -188,7 +192,7 @@ obj = {
 
 > _Redis [Keys](http://redis.io/commands#generic), 23 commands + 1 empty parent command_.
 
-> Arguments within [ ] are optional, '|' indicates multiple type for argument.
+> Arguments within [ ] are optional, '|' indicates multiple type for an argument.
 
 ```javascript
 
