@@ -45,11 +45,14 @@ var s = Syllabus( [ Boolean develop | String semver ] )
 
 ###Sample Usage
 
-> Create a full syllabus, then some syllabus in development mode.
+> Create a normal syllabus, then some syllabus in development mode.
 
 ```javascript
 var log = console.log
-    , full = Syllabus()
+    // production use
+    , syll = Syllabus()
+    // enable development mode
+    , full = Syllabus( true )
     , recent = Syllabus( '2.6.0' )
     , old = Syllabus( '2.4.0' )
     , ancient = Syllabus( '1.0.0' )
@@ -58,7 +61,6 @@ var log = console.log
 log( recent.size() );
 log( old.size() );
 log( ancient.size() );
-
 ```
 > See [examples](example/).
 
