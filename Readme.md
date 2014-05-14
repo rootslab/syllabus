@@ -58,6 +58,7 @@ var log = console.log
     , ancient = Syllabus( '1.0.0' )
     ;
 
+log( full.size() );
 log( recent.size() );
 log( old.size() );
 log( ancient.size() );
