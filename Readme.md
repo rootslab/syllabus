@@ -105,10 +105,10 @@ Syllabus : {
      *   type: 'connection',
      *   cmd: 'PING',
      *   sub: [],
-     *   rtype: '+',
-     *   since: [ 1, 0, 0 ],
-     *   hint: 'PING',
      *   url: 'http://redis.io/commands/ping'
+     *   rtype: '+',
+     *   since: '1.0.0',
+     *   hint: 'PING',
      *   descr: 'Ping the server.'
      * }
      *
