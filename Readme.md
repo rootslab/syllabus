@@ -37,7 +37,7 @@ $ npm test
   - enable development / informational mode, with a boolean.
   - enable development mode and restrict commands available for a
     particular __Redis__ version, passing a __Semver__ string
-    like __"1.0.0'__.
+    like __"1.0.0"__.
 
 ```javascript
 var s = Syllabus( [ Boolean develop | String semver ] )
@@ -45,6 +45,21 @@ var s = Syllabus( [ Boolean develop | String semver ] )
 
 ###Sample Usage
 
+> Create a full syllabus, then some syllabus in development mode.
+
+```javascript
+var log = console.log
+    , full = Syllabus()
+    , recent = Syllabus( '2.6.0' )
+    , old = Syllabus( '2.4.0' )
+    , ancient = Syllabus( '1.0.0' )
+    ;
+
+log( recent.size() );
+log( old.size() );
+log( ancient.size() );
+
+```
 > See [examples](example/).
 
 ###Properties, Methods
@@ -138,6 +153,11 @@ Syllabus : {
      * and of keywords types.
      */
     , size : function () : Number
+
+    /*
+     * the current version / semver string specified , or '*'
+     */
+    , semver : String
 }
 ```
 -------------------------------------------------------------------------------------------------
