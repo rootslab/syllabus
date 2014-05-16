@@ -201,13 +201,20 @@ obj = {
   , ecmd: '*2\r\n$3\r\nGET\r\n$1\r\n1\r\n'
 
  /*
-  * An utility function to parse data replied by Redis
-  * after sending a command. For default is an echo function
-  * ( it returns input as output ), otherwise depending on
-  * command the function could be Abaco#parseInt,
-  * Abaco#parseFloat, etc..
+  * 'fn' is an utility function to parse data replied by Redis after sending
+  * a command. For default is Bolgia#reveal function ( it converts Buffers to
+  * String and Numbers ), otherwise, depending on the command, the function
+  * could be also Abaco#parseInt, Abaco#parseFloat, etc..
   */
-  , 'fn' : function ( Object data )  : Object
+  , 'fn' : function ( Object data ) {} : Object
+
+  /*
+   * 'zn' is a callback function placeholder, for defaults it's an empty function;
+   * it could be specified passing a function as the last argument to any of command
+   * methods.
+   * See signatures below to check the correct syntax of a particular command.
+   */
+  , 'zn' : function () {} : undefined
 }
 ```
 
@@ -221,17 +228,17 @@ obj = {
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'del' : function ( Number key | String key | Array keys ) : Object
+'del' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
-'dump' : function ( Number key | String key ) : Object
+'dump' : function ( Number key | String key [, Function cback ] ) : Object
 
-'exists' : function ( Number key | String key ) : Object
+'exists' : function ( Number key | String key [, Function cback ] ) : Object
 
-'expire' : function ( Number key | String key, Number seconds ) : Object
+'expire' : function ( Number key | String key, Number seconds [, Function cback ] ) : Object
 
-'expireat' : function ( Number key | String key, Number unixtime ) : Object
+'expireat' : function ( Number key | String key, Number unixtime [, Function cback ] ) : Object
 
-'keys' : function ( [ String pattern ] ) : Object
+'keys' : function ( [ String pattern [, Function cback ] ] ) : Object
 
 /*
  * migrate accepts an Array or on option Object:
@@ -249,32 +256,32 @@ obj = {
  * 'MIGRATE host port key destination-db timeout [COPY] [REPLACE]'
  *
  */
-'migrate' : function( Number key | String key, Array args | Object opt ) : Object
+'migrate' : function( Number key | String key, Array args | Object opt [, Function cback ] ) : Object
 
-'move' : function ( Number key | String key, String db | Number db ) : Object
+'move' : function ( Number key | String key, String db | Number db [, Function cback ] ) : Object
 
 'object' : {
 
-    'encoding' : function ( Number key | String key ) : Object
+    'encoding' : function ( Number key | String key [, Function cback ] ) : Object
 
-    'idletime' : function ( Number key | String key ) : Object
+    'idletime' : function ( Number key | String key [, Function cback ] ) : Object
 
-    'refcount' : function ( Number key | String key ) : Object
+    'refcount' : function ( Number key | String key [, Function cback ] ) : Object
 }
 
-'persist' : function ( Number key | String key ) : Object
+'persist' : function ( Number key | String key [, Function cback ] ) : Object
 
-'pexpire' : function ( Number key | String key, Number millis ) : Object
+'pexpire' : function ( Number key | String key, Number millis [, Function cback ] ) : Object
 
-'pexpireat' : function ( Number key | String key, Number unixtime ) : Object
+'pexpireat' : function ( Number key | String key, Number unixtime [, Function cback ] ) : Object
 
-'pttl' : function ( Number key | String key ) : Object
+'pttl' : function ( Number key | String key [, Function cback ] ) : Object
 
-'randomkey' : function () : Object
+'randomkey' : function ( [ Function cback ] ) : Object
 
-'rename' : function ( Number key | String key, String name | Number name ) : Object
+'rename' : function ( Number key | String key, String name | Number name [, Function cback ] ) : Object
 
-'renamenx' : function ( Number key | String key, String name | Number name ) : Object
+'renamenx' : function ( Number key | String key, String name | Number name [, Function cback ] ) : Object
 
 /*
  * RESTORE gets a single Buffer as the last argument, like a reply from DUMP.
@@ -284,7 +291,7 @@ obj = {
  * RESTORE key ttl serialized-value
  *
  */
-'restore' : function ( Number key | String key, Number ttl, Buffer data ) : Object
+'restore' : function ( Number key | String key, Number ttl, Buffer data [, Function cback ] ) : Object
 
 /*
  * scan accepts an Array or on option Object:
@@ -299,7 +306,7 @@ obj = {
  *
  * SCAN cursor [MATCH pattern] [COUNT count]
  */
-'scan' : function ( Number cursor | String cursor, Object opt | Array args ) : Object
+'scan' : function ( Number cursor | String cursor, Object opt | Array args [, Function cback ] ) : Object
 
 /*
  * sort accepts an Array or on option Object:
@@ -316,11 +323,11 @@ obj = {
  *
  * SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]
  */
-'sort' : function ( Number key | String key, Object opt | Array args ) : Object
+'sort' : function ( Number key | String key, Object opt | Array args [, Function cback ] ) : Object
 
-'ttl' : function ( Number key | String key ) : Object
+'ttl' : function ( Number key | String key [, Function cback ] ) : Object
 
-'type' : function ( Number key | String key ) : Object
+'type' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -335,42 +342,42 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'append' : function ( Number key | String key, Number value | String value ) : Object
+'append' : function ( Number key | String key, Number value | String value [, Function cback ] ) : Object
 
-'bitcount' : function ( Number key | String key [, Array range ] ) : Object
+'bitcount' : function ( Number key | String key [, Array range [, Function cback ] ] ) : Object
 
 'bittop' : { 
 
-    'and' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+    'and' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
-    'not' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+    'not' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
-    'or' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+    'or' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
-    'xor' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+    'xor' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 }
 
-'bitpos' : function ( Number key | String key, Number pos | String pos [, Array range ] ) : Object
+'bitpos' : function ( Number key | String key, Number pos | String pos [, Array range [, Function cback ] ] ) : Object
 
-'decr' : function ( Number key | String key ) : Object
+'decr' : function ( Number key | String key [, Function cback ] ) : Object
 
-'decrby' : function ( Number key | String key, Number integer | String integer ) : Object
+'decrby' : function ( Number key | String key, Number integer | String integer [, Function cback ] ) : Object
 
-'get' : function ( Number key | String key ) : Object
+'get' : function ( Number key | String key [, Function cback ] ) : Object
 
-'getbit' : function ( Number key | String key, Number offset | String offset ) : Object
+'getbit' : function ( Number key | String key, Number offset | String offset [, Function cback ] ) : Object
 
-'getrange' : function ( Number key | String key, String start | Number start, String end | Number end ) : Object
+'getrange' : function ( Number key | String key, String start | Number start, String end | Number end [, Function cback ] ) : Object
 
-'getset' : function ( Number key | String key, Number value | String value ) : Object
+'getset' : function ( Number key | String key, Number value | String value [, Function cback ] ) : Object
 
-'incr' : function ( Number key | String key ) : Object
+'incr' : function ( Number key | String key [, Function cback ] ) : Object
 
-'incrby' : function ( Number key | String key, Number integer | String integer ) : Object
+'incrby' : function ( Number key | String key, Number integer | String integer [, Function cback ] ) : Object
 
-'incrbyfloat' : function ( Number key | String key, String float | Number float ) : Object
+'incrbyfloat' : function ( Number key | String key, String float | Number float [, Function cback ] ) : Object
 
-'mget' : function ( Number key | String key | Array keys ) : Object
+'mget' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
 /*
  * mset accepts an Array of fields and values or an Object:
@@ -385,7 +392,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * MSET key value [key value ...]
  */
-'mset' : function ( Array args | Object fvalues ) : Object
+'mset' : function ( Array args | Object fvalues [, Function cback ] ) : Object
 
 /*
  * msetnx accepts an Array of fields and values or an Object:
@@ -400,9 +407,9 @@ _[Back to Index](#syllabus-commands)_
  *
  * MSETNX key value [key value ...]
  */
-'msetnx' : function ( Array args | Object fvalues ) : Object
+'msetnx' : function ( Array args | Object fvalues [, Function cback ] ) : Object
 
-'psetex' : function ( Number key | String key, String millis | Number millis, Number val | String val ) : Object
+'psetex' : function ( Number key | String key, String millis | Number millis, Number val | String val [, Function cback ] ) : Object
 
 /*
  * set accepts an Array or on option Object:
@@ -417,17 +424,17 @@ _[Back to Index](#syllabus-commands)_
  *
  * SET key value [EX seconds] [PX milliseconds] [NX|XX]
  */
-'set' : function ( Number key | String key, Number val | String val [, Array args | Object options ] ) : Object
+'set' : function ( Number key | String key, Number val | String val [, Array args | Object options [, Function cback ] ] ) : Object
 
-'setbit' : function ( Number key | String key, Number offset | String offset, Number val | String val ) : Object
+'setbit' : function ( Number key | String key, Number offset | String offset, Number val | String val [, Function cback ] ) : Object
 
-'setex' : function ( Number key | String key, Number secs | String secs, Number value | String value ) : Object
+'setex' : function ( Number key | String key, Number secs | String secs, Number value | String value [, Function cback ] ) : Object
 
-'setnx' : function ( Number key | String key, Number value | String value ) : Object
+'setnx' : function ( Number key | String key, Number value | String value [, Function cback ] ) : Object
 
-'setrange' : function ( Number start | String start, Number offset | String offset, Number val | String val ) : Object
+'setrange' : function ( Number start | String start, Number offset | String offset, Number val | String val [, Function cback ] ) : Object
 
-'strlen' : function ( Number key | String key ) : Object
+'strlen' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -442,11 +449,11 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'hdel' : function ( Number key | String key, String field | Array fields ) : Object
+'hdel' : function ( Number key | String key, String field | Array fields [, Function cback ] ) : Object
 
-'hexists' : function ( Number key | String key, String field ) : Object
+'hexists' : function ( Number key | String key, String field [, Function cback ] ) : Object
 
-'hget' : function ( Number key | String key, String field ) : Object
+'hget' : function ( Number key | String key, String field [, Function cback ] ) : Object
 
 /*
  * The fn utility returned by the #hgetall mix-in, is able to
@@ -462,15 +469,15 @@ _[Back to Index](#syllabus-commands)_
  * - 'convert' enables automatic Buffer to String conversion, and
  *    String to Number conversion when it's possible.
  */
-'hgetall' : function ( Number key | String key ) : Object
+'hgetall' : function ( Number key | String key [, Function cback ] ) : Object
 
-'hincrby' : function ( Number key | String key, String field, Number integer | String integer ) : Object
+'hincrby' : function ( Number key | String key, String field, Number integer | String integer [, Function cback ] ) : Object
 
-'hincrbyfloat' : function ( Number key | String key, String field, Number float | String float ) : Object
+'hincrbyfloat' : function ( Number key | String key, String field, Number float | String float [, Function cback ] ) : Object
 
-'hkeys' : function ( Number key | String key ) : Object
+'hkeys' : function ( Number key | String key [, Function cback ] ) : Object
 
-'hlen' : function ( Number key | String key ) : Object
+'hlen' : function ( Number key | String key [, Function cback ] ) : Object
 
  /*
   * The utility fn returned by the #hmget mix-in, is able to
@@ -492,7 +499,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * HMSET key field value [field value ...]
  */
-'hmset' : function ( Number key | array key, Array fvalues | Object fvalues ) : Object
+'hmset' : function ( Number key | array key, Array fvalues | Object fvalues [, Function cback ] ) : Object
 
 /*
  * hscan accepts an Array or on option Object:
@@ -507,13 +514,13 @@ _[Back to Index](#syllabus-commands)_
  *
  * HSCAN key cursor [MATCH pattern] [COUNT count]
  */
-'hscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
+'hscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args [, Function cback ] ) : Object
 
-'hset' : function ( Number key | String key, String field, Number value | String value ) : Object
+'hset' : function ( Number key | String key, String field, Number value | String value [, Function cback ] ) : Object
 
-'hsetnx' : function ( Number key | String key, String field, Number value | String value ) : Object
+'hsetnx' : function ( Number key | String key, String field, Number value | String value [, Function cback ] ) : Object
 
-'hvals' : function ( Number key | String key ) : Object
+'hvals' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -528,39 +535,39 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'blpop' : function ( Number key | String key, Number timeout | String timeout ) : Object
+'blpop' : function ( Number key | String key, Number timeout | String timeout [, Function cback ] ) : Object
 
-'brpop' : function ( Number key | String key, Number timeout | String timeout ) : Object
+'brpop' : function ( Number key | String key, Number timeout | String timeout [, Function cback ] ) : Object
 
-'brpoplpush' : function ( Number src | String src, Number dest | String dest, Number timeout | String timeout ) : Object
+'brpoplpush' : function ( Number src | String src, Number dest | String dest, Number timeout | String timeout [, Function cback ] ) : Object
 
-'lindex' : function ( Number key | String key, Number index | String index ) : Object
+'lindex' : function ( Number key | String key, Number index | String index [, Function cback ] ) : Object
 
-'linsert' : function ( Number key | String key, String pos, Number pivot | String pivot, Number val | String val ) : Object
+'linsert' : function ( Number key | String key, String pos, Number pivot | String pivot, Number val | String val [, Function cback ] ) : Object
 
-'llen' : function ( Number key | String key ) : Object
+'llen' : function ( Number key | String key [, Function cback ] ) : Object
 
-'lpop' : function ( Number key | String key ) : Object
+'lpop' : function ( Number key | String key [, Function cback ] ) : Object
 
-'lpush' : function ( Number src | String src, String value | Array values ) : Object
+'lpush' : function ( Number src | String src, String value | Array values [, Function cback ] ) : Object
 
-'lpushx' : function ( Number src | String src, String value ) : Object
+'lpushx' : function ( Number src | String src, String value [, Function cback ] ) : Object
 
-'lrange' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
+'lrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Function cback ] ) : Object
 
-'lrem' : function ( Number key | String key, Number count | String count, Number val | String val ) : Object
+'lrem' : function ( Number key | String key, Number count | String count, Number val | String val [, Function cback ] ) : Object
 
-'lset' : function ( Number key | String key, Number index | String index, Number val | String val ) : Object
+'lset' : function ( Number key | String key, Number index | String index, Number val | String val [, Function cback ] ) : Object
 
-'ltrim' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
+'ltrim' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Function cback ] ) : Object
 
-'rpop' : function ( Number key | String key ) : Object
+'rpop' : function ( Number key | String key [, Function cback ] ) : Object
 
-'rpoplpush' : function ( Number src | String src, Number dest | String dest ) : Object
+'rpoplpush' : function ( Number src | String src, Number dest | String dest [, Function cback ] ) : Object
 
-'rpush' : function ( Number src | String src, String value | Array values ) : Object
+'rpush' : function ( Number src | String src, String value | Array values [, Function cback ] ) : Object
 
-'rpushx' : function ( Number src | String src, Number value | String value ) : Object
+'rpushx' : function ( Number src | String src, Number value | String value [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -575,29 +582,29 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'sadd' : function ( Number key | String key, String member | Array members ) : Object
+'sadd' : function ( Number key | String key, String member | Array members [, Function cback ] ) : Object
 
-'scard' : function ( Number key | String key ) : Object
+'scard' : function ( Number key | String key [, Function cback ] ) : Object
 
-'sdiff' : function ( Number key | String key | Array keys ) : Object
+'sdiff' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
-'sdiffstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+'sdiffstore' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
-'sinter' : function ( Number key | String key | Array keys ) : Object
+'sinter' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
-'sinterstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+'sinterstore' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
-'sismember' : function ( Number key | String key, String member | Array members ) : Object
+'sismember' : function ( Number key | String key, String member | Array members [, Function cback ] ) : Object
 
-'smove' : function ( Number src | String src, Number dest | String dest, Number member | String member ) : Object
+'smove' : function ( Number src | String src, Number dest | String dest, Number member | String member [, Function cback ] ) : Object
 
-'smembers' : function ( Number key | String key ) : Object
+'smembers' : function ( Number key | String key [, Function cback ] ) : Object
 
-'spop' : function ( Number key | String key ) : Object
+'spop' : function ( Number key | String key [, Function cback ] ) : Object
 
-'srandmember' : function ( Number key | String key, Number count | String count ) : Object
+'srandmember' : function ( Number key | String key, Number count | String count [, Function cback ] ) : Object
 
-'srem' : function ( Number key | String key, Number member | String members | Array members ) : Object
+'srem' : function ( Number key | String key, Number member | String members | Array members [, Function cback ] ) : Object
 
 /*
  * sscan accepts an Array or on option Object:
@@ -612,11 +619,11 @@ _[Back to Index](#syllabus-commands)_
  *
  * SSCAN key cursor [MATCH pattern] [COUNT count]
  */
-'sscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
+'sscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args [, Function cback ] ) : Object
 
-'sunion' : function ( Number key | String key | Array keys ) : Object
+'sunion' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
-'sunionstore' : function ( Number dest | String dest, Number key | String key | Array keys ) : Object
+'sunionstore' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -644,13 +651,13 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZADD key score member [score member ...]
  */
-'zadd' : function ( Number key | string key, Array args | Object scores ) : Object
+'zadd' : function ( Number key | string key, Array args | Object scores [, Function cback ] ) : Object
 
-'zcard' : function ( Number key | String key ) : Object
+'zcard' : function ( Number key | String key [, Function cback ] ) : Object
 
-'zcount' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
+'zcount' : function ( Number key | String key, Number min | String min, Number max | String max [, Function cback ] ) : Object
 
-'zincrby' : function ( Number key | String key, Number integer | String integer, Number member | String member ) : Object
+'zincrby' : function ( Number key | String key, Number integer | String integer, Number member | String member [, Function cback ] ) : Object
 
 /*
  * zinterstore optionally accepts an array of weights and an aggregate string option.
@@ -659,11 +666,11 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
  */
-'zinterstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate ] ] ) : Object
+'zinterstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate [, Function cback ] ] ] ) : Object
 
-'zlexcount' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
+'zlexcount' : function ( Number key | String key, Number min | String min, Number max | String max [, Function cback ] ) : Object
 
-'zrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores ] ) : Object
+'zrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores [, Function cback ] ] ) : Object
 
 /*
  * zrangebylex optionally accepts a limit array containing an offset and a count.
@@ -672,23 +679,23 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZRANGEBYLEX key min max [LIMIT offset count]
  */
-'zrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max [, Array limit ] ) : Object
+'zrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max [, Array limit  [, Function cback ] ] ) : Object
 
-'zrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max [, Boolean withscores ] ) : Object
+'zrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max [, Boolean withscores [, Function cback ] ] ) : Object
 
-'zrank' : function ( Number key | String key, Number member | String member ) : Object
+'zrank' : function ( Number key | String key, Number member | String member [, Function cback ] ) : Object
 
-'zrem' : function ( Number key | String key, Number member | String member | Array members ) : Object ) : Object
+'zrem' : function ( Number key | String key, Number member | String member | Array members [, Function cback ] ) : Object
 
-'zremrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
+'zremrangebylex' : function ( Number key | String key, Number min | String min, Number max | String max [, Function cback ] ) : Object
 
-'zremrangebyrank' : function ( Number key | String key, Number start | String start, Number stop | String stop ) : Object
+'zremrangebyrank' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Function cback ] ) : Object
 
-'zremrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max ) : Object
+'zremrangebyscore' : function ( Number key | String key, Number min | String min, Number max | String max [, Function cback ] ) : Object
 
-'zrevrank' : function ( Number key | String key, Number member | String member ) : Object
+'zrevrank' : function ( Number key | String key, Number member | String member [, Function cback ] ) : Object
 
-'zrevrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores ] ) : Object
+'zrevrange' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores [, Function cback ] ] ) : Object
 
 /*
  * zrevrangebyscore optionally accepts a withscores boolean and a limit array containing an offset and a count.
@@ -697,7 +704,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZREVRANGEBYSCORE key max min [WITHSCORES] [LIMIT offset count]
  */
-'zrevrangebyscore' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores [, Array limit ] ] ) : Object
+'zrevrangebyscore' : function ( Number key | String key, Number start | String start, Number stop | String stop [, Boolean withscores [, Array limit [, Function cback ] ] ] ) : Object
 
 /*
  * zscan accepts an Array or on option Object:
@@ -712,9 +719,9 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZSCAN key cursor [MATCH pattern] [COUNT count]
  */
-'zscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args ) : Object
+'zscan' : function ( Number key | String key, Number cursor | String cursor, Object opt | Array args [, Function cback ] ) : Object
 
-'zscore' : function ( Number key | String key, Number member | String member ) : Object
+'zscore' : function ( Number key | String key, Number member | String member [, Function cback ] ) : Object
 
 /*
  * zunionstore optionally accepts an array of weights and an aggregate string option.
@@ -723,7 +730,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
  */
-'zunionstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate ] ] ) : Object
+'zunionstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate [, Function cback ] ] ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -738,11 +745,11 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'pfadd' : function ( Number key | String key, String channel | Array channels ) : Object
+'pfadd' : function ( Number key | String key, String channel | Array channels [, Function cback ] ) : Object
 
-'pfcount' : function ( Number key | String key, Array keys ) : Object
+'pfcount' : function ( Number key | String key, Array keys [, Function cback ] ) : Object
 
-'pfmerge' : function ( Number dest | String dest, String source | Array sources ) : Object
+'pfmerge' : function ( Number dest | String dest, String source | Array sources [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -757,24 +764,24 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'psubscribe' : function ( String pattern | Array patterns ) : Object
+'psubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
 
-'publish' : function ( String channel, String message ) : Object
+'publish' : function ( String channel, String message [, Function cback ] ) : Object
 
 'pubsub' : {
 
-    'channels' : function ( [ String pattern ] ) : Object
+    'channels' : function ( [ String pattern [, Function cback ] ] ) : Object
 
-    'numpat' : function () : Object
+    'numpat' : function ( [ Function cback ] ) : Object
 
-    'numsub' : function ( String channel | Array channels ) : Object
+    'numsub' : function ( String channel | Array channels [, Function cback ] ) : Object
 }
 
-'punsubscribe' : function ( String pattern | Array patterns ) : Object
+'punsubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
 
-'subscribe' : function ( Number channel | String channel | Array channels ) : Object
+'subscribe' : function ( Number channel | String channel | Array channels [, Function cback ] ) : Object
 
-'unsubscribe' : function ( [ String channel | Array channels ] ) : Object
+'unsubscribe' : function ( [ String channel | Array channels [, Function cback ] ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -789,15 +796,15 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'discard' : function () : Object
+'discard' : function ( [ Function cback ] ) : Object
 
-'exec' : function () : Object
+'exec' : function ( [ Function cback ] ) : Object
 
-'multi' : function () : Object
+'multi' : function ( [ Function cback ] ) : Object
 
-'watch' : function ( Number key | String key | Array keys ) : Object
+'watch' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
-'unwatch' : function () : Object
+'unwatch' : function ( [ Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -819,7 +826,7 @@ _[Back to Index](#syllabus-commands)_
  *
  * EVAL script numkeys key [key ...] arg [arg ...]
  */
-'eval' : function ( String script, Array keys, Array args ) : Object
+'eval' : function ( String script, Array keys, Array args [, Function cback ] ) : Object
 
 /*
  * evalsha accepts 2 Arrays of keys and args.
@@ -828,17 +835,17 @@ _[Back to Index](#syllabus-commands)_
  *
  * EVALSHA sha1 numkeys key [key ...] arg [arg ...]
  */
-'evalsha' : function ( String sha, Array keys, Array args ) : Object
+'evalsha' : function ( String sha, Array keys, Array args [, Function cback ] ) : Object
 
 'script' : {
 
-    'exists' : function ( String key | Array keys ) : Object
+    'exists' : function ( String key | Array keys [, Function cback ] ) : Object
 
-    'flush' : function () : Object
+    'flush' : function ( [ Function cback ] ) : Object
 
-    'kill' : function () : Object
+    'kill' : function ( [ Function cback ] ) : Object
 
-    'load' : function ( String key ) : Object
+    'load' : function ( String key [, Function cback ] ) : Object
 }
 
 ```
@@ -854,15 +861,15 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'auth' : function ( String password ) : Object
+'auth' : function ( String password [, Function cback ] ) : Object
 
-'echo' : function ( Number string | String string ) : Object
+'echo' : function ( Number string | String string [, Function cback ] ) : Object
 
-'ping' : function () : Object
+'ping' : function ( [ Function cback ] ) : Object
 
-'quit' : function () : Object
+'quit' : function ( [ Function cback ] ) : Object
 
-'select' : function ( Number db | String db ) : Object
+'select' : function ( Number db | String db [, Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -877,15 +884,15 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'bgrewriteaof' : function () : Object
+'bgrewriteaof' : function ( [ Function cback ] ) : Object
 
-'bgsave' : function () : Object
+'bgsave' : function ( [ Function cback ] ) : Object
 
 'client' : {
 
-    'getname' : function () : Object
+    'getname' : function ( [ Function cback ] ) : Object
 
-    'kill' : function ( Number key | String key, Number ip | String ip, Number port | String port ) : Object
+    'kill' : function ( Number key | String key, Number ip | String ip, Number port | String port [, Function cback ] ) : Object
 
     /*
      * The fn utility returned by the #list mix-in, is able to convert
@@ -895,11 +902,11 @@ _[Back to Index](#syllabus-commands)_
      * See http://redis.io/commands/client-list for a full explanation
      * of properties.
      */
-    'list' : function () : Object
+    'list' : function ( [ Function cback ] ) : Object
 
-    'pause' : function ( Number millis | String millis ) : Object
+    'pause' : function ( Number millis | String millis [, Function cback ] ) : Object
 
-    'setname' : function ( Number name | String name ) : Object
+    'setname' : function ( Number name | String name [, Function cback ] ) : Object
 }
 
 'config' : {
@@ -909,27 +916,27 @@ _[Back to Index](#syllabus-commands)_
      * converts ASCII Strings numbers to Numbers and 
      * strings 'yes' and 'no' to Booleans true/false.
      */
-    'get' : function ( String param ) : Object
+    'get' : function ( String param [, Function cback ] ) : Object
 
-    'resetstat' : function () : Object
+    'resetstat' : function ( [ Function cback ] ) : Object
 
-    'rewrite' : function () : Object
+    'rewrite' : function ( [ Function cback ] ) : Object
 
-    'set' : function ( String param, Number value | String value ) : Object
+    'set' : function ( String param, Number value | String value [, Function cback ] ) : Object
 }
 
-'dbsize' : function () : Object
+'dbsize' : function ( [ Function cback ] ) : Object
 
 'debug' : {
 
-    'object' : function ( Number key | String key ) : Object 
+    'object' : function ( Number key | String key [, Function cback ] ) : Object 
 
-    'segfault' : function () : Object
+    'segfault' : function ( [ Function cback ] ) : Object
 }
 
-'flushall' : function () : Object
+'flushall' : function ( [ Function cback ] ) : Object
 
-'flushdb' : function () : Object
+'flushdb' : function ( [ Function cback ] ) : Object
 
 /*
  * The fn utility returned by the #info mix-in, is able to convert the
@@ -941,30 +948,30 @@ _[Back to Index](#syllabus-commands)_
  *
  * NOTE: The first argument of the utility fn could be a Buffer or a String.
  */
-'info' : function ( [ String section ] ) : Object
+'info' : function ( [ String section [, Function cback ] ] ) : Object
 
-'lastsave' : function () : Object
+'lastsave' : function ( [ Function cback ] ) : Object
 
-'monitor' : function () : Object
+'monitor' : function ( [ Function cback ] ) : Object
 
-'save' : function () : Object
+'save' : function ( [ Function cback ] ) : Object
 
-'shutdown' : function ( [ String opt ] ) : Object
+'shutdown' : function ( [ String opt [, Function cback ] ] ) : Object
 
-'slaveof' : function ( String host, Number port | String port ) : Object
+'slaveof' : function ( String host, Number port | String port [, Function cback ] ) : Object
 
 'slowlog' : {
 
-    'get' : function ( Number integer | String integer ) : Object
+    'get' : function ( Number integer | String integer [, Function cback ] ) : Object
 
-    'len' : function () : Object
+    'len' : function ( [ Function cback ] ) : Object
 
-    'reset' : function () : Object
+    'reset' : function ( [ Function cback ] ) : Object
 }
 
-'sync' : function () : Object
+'sync' : function ( [ Function cback ] ) : Object
 
-'time' : function () : Object
+'time' : function ( [ Function cback ] ) : Object
 ```
 _[Back to Index](#syllabus-commands)_
 
@@ -992,4 +999,4 @@ _[Back to Index](#syllabus-commands)_
 > IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 > CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 > TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-> SOFTWARE OR THE USE OR OTHER DEALINGS IN T
+> SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
