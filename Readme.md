@@ -764,8 +764,6 @@ _[Back to Index](#syllabus-commands)_
 
 // NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
-'psubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
-
 'publish' : function ( String channel, String message [, Function cback ] ) : Object
 
 'pubsub' : {
@@ -777,11 +775,15 @@ _[Back to Index](#syllabus-commands)_
     'numsub' : function ( String channel | Array channels [, Function cback ] ) : Object
 }
 
-'punsubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
+// NOTE: un/subscriptions commands don't have a callback.
 
-'subscribe' : function ( Number channel | String channel | Array channels [, Function cback ] ) : Object
+'psubscribe' : function ( String pattern | Array patterns ) : Object
 
-'unsubscribe' : function ( [ String channel | Array channels [, Function cback ] ] ) : Object
+'punsubscribe' : function ( String pattern | Array patterns ) : Object
+
+'subscribe' : function ( Number channel | String channel | Array channels ) : Object
+
+'unsubscribe' : function ( [ String channel | Array channels ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
