@@ -775,15 +775,13 @@ _[Back to Index](#syllabus-commands)_
     'numsub' : function ( String channel | Array channels [, Function cback ] ) : Object
 }
 
-// NOTE: un/subscriptions commands don't have a callback.
+'psubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
 
-'psubscribe' : function ( String pattern | Array patterns ) : Object
+'punsubscribe' : function ( String pattern | Array patterns [, Function cback ] ) : Object
 
-'punsubscribe' : function ( String pattern | Array patterns ) : Object
+'subscribe' : function ( Number channel | String channel | Array channels [, Function cback ] ) : Object
 
-'subscribe' : function ( Number channel | String channel | Array channels ) : Object
-
-'unsubscribe' : function ( [ String channel | Array channels ] ) : Object
+'unsubscribe' : function ( [ String channel | Array channels [, Function cback ] ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
