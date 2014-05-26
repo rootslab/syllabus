@@ -89,6 +89,15 @@ Syllabus : {
      */
     , encode : Function
 
+    /*
+     * Wrap all Syllabus commands with a function that gets
+     * as argument the result of the command encoding.
+     *
+     * NOTE: It is useful to automatically enqueue or write
+     * an encoded command to a socket. See example.
+     */
+    , wrap : function ( Function wrapper ) {} : Boolean
+
     /* NOTE: methods below exist only in develop mode. */
 
     /*
