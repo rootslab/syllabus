@@ -96,7 +96,7 @@ Syllabus : {
      * NOTE: It is useful to automatically enqueue or write
      * an encoded command to a socket. See example.
      */
-    , wrap : function ( Function wrapper ) {} : Boolean
+    , wrap : function ( Function wrapper ) : Boolean
 
     /* NOTE: methods below exist only in develop mode. */
 
@@ -145,7 +145,7 @@ Syllabus : {
      *       - '-' or error reply.
      *
      */
-    , info : function ( String cmd )  : Object
+    , info : function ( String cmd ) : Object
 
     /*
      * Stick or unstick the #info method to every
@@ -215,7 +215,7 @@ obj = {
   * String and Numbers ), otherwise, depending on the command, the function
   * could be also Abaco#parseInt, Abaco#parseFloat, etc..
   */
-  , fn : function ( Object data ) {} : Object
+  , fn : function ( Object data ) : Object
 
   /*
    * 'zn' is a callback function placeholder, for defaults it's an empty function;
@@ -223,7 +223,7 @@ obj = {
    * methods.
    * See signatures below to check the correct syntax of a particular command.
    */
-  , zn : function () {} : undefined
+  , zn : function () : undefined
 }
 ```
 
