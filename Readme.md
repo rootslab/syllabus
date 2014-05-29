@@ -9,6 +9,10 @@
 
 > **_Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
+> It also uses the __[Hoar](https://github.com/rootslab/hoar)__ module to handle semantic versioning, __[Bolgia](https://github.com/rootslab/bolgia)__ and __[Abaco](https://github.com/rootslab/abaco)__ modules to get some utilities.
+
+> __NOTE:__ If you need to handle bindings between Syllabus commands and Redis replies, take a look at __[Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple rollback mechanism for commands, and to gain some performances in some particular situations.
+
 > Now __[169](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ###Install
