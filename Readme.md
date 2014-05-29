@@ -1,6 +1,7 @@
 ###Syllabus
 [![build status](https://secure.travis-ci.org/rootslab/syllabus.png?branch=master)](http://travis-ci.org/rootslab/syllabus) 
 [![NPM version](https://badge.fury.io/js/syllabus.png)](http://badge.fury.io/js/syllabus)
+[![build status](https://david-dm.org/rootslab/syllabus.png)](https://david-dm.org/rootslab/syllabus)
 
 [![NPM](https://nodei.co/npm/syllabus.png?downloads=true&stars=true)](https://nodei.co/npm/syllabus/)
 
