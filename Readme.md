@@ -25,7 +25,7 @@ $ npm install syllabus [-g]
 $ git clone git@github.com:rootslab/syllabus.git
 ```
 
-> __require__ .
+> __require__.
 
 ```javascript
 var Syllabus  = require( 'syllabus' );
