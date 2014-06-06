@@ -220,7 +220,7 @@ obj = {
   * 'fn' is an utility function to parse data replied by Redis after sending
   * a command. For default is Bolgia#reveal function ( it converts Buffers to
   * String and Numbers ), otherwise, depending on the command, the function
-  * could be also Abaco#parseInt, Abaco#parseFloat, etc..
+  * could be also Abaco#parseIntArray, Abaco#parseFloatArray, etc..
   */
   , fn : function ( Object data ) : Object
 
