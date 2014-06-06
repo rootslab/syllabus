@@ -24,7 +24,8 @@
     "abaco": ">=1.9.1",
     "bolgia" : ">=2.6.0",
     "hoar" : ">=0.7.1",
-    "sermone" : ">=1.6.1"
+    "sermone" : ">=1.6.1",
+    "camphora" : "0.8.2"
     },
   "devDependencies": {},
   "main": "index",
