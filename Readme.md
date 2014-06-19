@@ -234,22 +234,18 @@ obj = {
 }
 ```
 
-> if an __Error__ occur encoding a command, the obj/hash will be something like:
+> if an __error__ occurred while encoding a command, the obj/hash will be something like::
 
 ```javascript
 obj = {
   // command
   , cmd : 'GET'
 
- /*
-  * current Error instance
-  */
-  , err : Error
-
-  /*
-   * current command mix-in arguments
-   */
+  // current arguments for command mix-in
   , arg : Array
+
+  // current Error instance
+  , err : Error
 }
 ```
 
