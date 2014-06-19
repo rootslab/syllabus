@@ -225,12 +225,12 @@ obj = {
   , fn : function ( Object data ) : Object
 
   /*
-   * 'zn' is a callback function placeholder, for defaults it's an empty function;
+   * 'zn' is the callback function placeholder, for defaults it's an empty function;
    * it could be specified passing a function as the last argument to any of command
    * methods.
    * See signatures below to check the correct syntax of a particular command.
    */
-  , zn : function () : undefined
+  , zn : function ( err, data, fn ) : undefined
 }
 ```
 
