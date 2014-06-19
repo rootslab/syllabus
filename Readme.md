@@ -197,7 +197,7 @@ __Types:__
 - [Connection](#connection) : _5 commands_.
 - [Server](#server) : _27 commands_.
 
-> Every Syllabus command returns an obj/hash:
+> Every Syllabus command returns an obj/hash like this:
 
 ```javascript
 obj = {
@@ -231,6 +231,25 @@ obj = {
    * See signatures below to check the correct syntax of a particular command.
    */
   , zn : function ( err, data, fn ) : undefined
+}
+```
+
+> if an __Error__ occur encoding a command, the obj/hash will be something like:
+
+```javascript
+obj = {
+  // command
+  , cmd : 'GET'
+
+ /*
+  * current Error instance
+  */
+  , err : Error
+
+  /*
+   * current command mix-in arguments
+   */
+  , arg : Array
 }
 ```
 
