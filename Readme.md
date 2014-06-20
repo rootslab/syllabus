@@ -15,7 +15,7 @@
 
 > __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
-> __NOTE__: If you need a full-featured __Redis 2.x__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
+> __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
 > Now __[169](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
