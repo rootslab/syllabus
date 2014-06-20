@@ -138,10 +138,10 @@ Syllabus : {
        *    encoding : 'utf8'
        *    , flag : 'r'
        *    , payload : true
-       *    , basename : true
+       *    , filepath : __dirname + '/scripts'
        * }
        *
-       * See Camphora#load.
+       * See Camphora#load options.
        */
       , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt ] ) : undefined
 
