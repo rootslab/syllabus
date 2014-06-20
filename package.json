@@ -1,6 +1,6 @@
 {
   "name": "syllabus",
-  "version": "0.25.6",
+  "version": "0.26.0",
   "description": "Syllabus, a collection of helpers mix-ins to encode Redis commands, builded upon Sermone.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
@@ -10,11 +10,16 @@
   },
   "keywords": [
     "syllabus",
-    "redis",
-    "encoder",
+    "command encoder",
     "protocol",
-    "redis protocol",
-    "redis commands"
+    "redis",
+    "Redis",
+    "Redis protocol",
+    "Redis commands",
+    "command mix-ins",
+    "script cache",
+    "LUA scripts",
+    "LUA"
   ],
   "author": {
     "name": "Guglielmo Ferri",

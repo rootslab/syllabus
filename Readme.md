@@ -11,6 +11,8 @@
 
 > It also uses the __[Hoar](https://github.com/rootslab/hoar)__ module to handle semantic versioning, then __[Bolgia](https://github.com/rootslab/bolgia)__ and __[Abaco](https://github.com/rootslab/abaco)__ modules to get some utilities.
 
+> Moreover, **_Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
+
 > __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
 > __NOTE__: If you need a full-featured __Redis 2.x__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
@@ -104,6 +106,76 @@ Syllabus : {
      * an encoded command to a socket. See example.
      */
     , wrap : function ( Function wrapper ) : Boolean
+
+    lua : {
+      /*
+       * Get current cache object/hash (Camphora instance).
+       */
+      cache : function () : Camphora
+
+      /*
+       * Initiliazing LUA script cache. Load all the files
+       * found in the './lib/lua/scripts' directory, into the
+       * cache; then encode all SCRIPT LOAD commands with
+       * resulting data from files.
+       *
+       * - All script files are loaded in the local cache, a list
+       *   of SCRIPT LOAD encoded commands will be passed to this
+       *   callback.
+       *
+       * 'onCacheLoaded' : function ( Array commands )
+       *
+       * - This callback will be executed after that the script file
+       *   will be loaded into the local cache and successfully
+       *   processed by Redis.
+       *
+       * 'onFileProcessed' : function ( String script_name, Buffer data, String txt, Boolean isLast )
+       *
+       * 'file_load_opt' ( Spade default options are ) :
+       *
+       * {
+       *    // set encoding to utf8
+       *    encoding : 'utf8'
+       *    , flag : 'r'
+       *    , payload : true
+       *    , basename : true
+       * }
+       *
+       * See Camphorta#load.
+       */
+      , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt ] ) : undefined
+
+      /*
+       * SCRIPT commands shortcuts. These commands update
+       * script cache for Spade and encode commands for Redis,
+       */
+      , script : {
+          
+          /*
+           * Flush Spade cache.
+           * It returns encoded "SCRIPT FLUSH"
+           * command to clear Redis cache.
+           */
+          flush : function ( [ Function cback ] ) : Object
+
+          /*
+           * Load a key/script into the cache.
+           * It returns encoded "SCRIPT LOAD data" command for Redis. 
+           */
+          , load : function ( String key, String data [, Function cback ] ) : Object
+
+          /*
+           * Run a LUA script from the cache using its key/name.
+           * It returns encoded "EVALSHA digest" command.
+           */
+          , run : function ( String key, Array keys, Array args [, Function cback ] ) : Object
+      }
+      /*
+       * Wrap Syllabus.lua.scripts commands with a function that gets
+       * as argument the result object from the command encoding.
+       */
+      , wrap: function ( fn ) : Boolean
+    }
 
     /* NOTE: methods below exist only in develop mode. */
 
