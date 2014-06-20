@@ -129,7 +129,7 @@ Syllabus : {
        *   will be loaded into the local cache and successfully
        *   processed by Redis.
        *
-       * 'onFileProcessed' : function ( String script_name, Buffer data, String txt, Boolean isLast )
+       * 'onFileProcessed' : function ( Boolean is_err_reply, String scr_name, String scr_digest, String scr_txt, Boolean isLast )
        *
        * 'file_load_opt' ( Spade default options are ) :
        *
@@ -141,7 +141,7 @@ Syllabus : {
        *    , basename : true
        * }
        *
-       * See Camphorta#load.
+       * See Camphora#load.
        */
       , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt ] ) : undefined
 
