@@ -146,8 +146,7 @@ Syllabus : {
       , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt ] ) : undefined
 
       /*
-       * SCRIPT commands shortcuts. These commands update
-       * script cache for Spade and encode commands for Redis,
+       * SCRIPT commands shortcuts that updating the cache.
        */
       , script : {
           
