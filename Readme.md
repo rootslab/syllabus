@@ -11,7 +11,7 @@
 
 > It also uses the __[Hoar](https://github.com/rootslab/hoar)__ module to handle semantic versioning, then __[Bolgia](https://github.com/rootslab/bolgia)__ and __[Abaco](https://github.com/rootslab/abaco)__ modules to get some utilities.
 
-> Moreover, **_Σ Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
+> Moreover, **_Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
 > __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[♎ Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
@@ -103,7 +103,8 @@ Syllabus : {
      * as argument the result object from the command encoding.
      *
      * NOTE: It is useful to automatically enqueue or write
-     * an encoded command to a socket. See example.
+     * an encoded command to a socket.
+     * See usage example in Spade code: https//github.com/rootslab/spade
      */
     , wrap : function ( Function wrapper ) : Boolean
 
@@ -172,6 +173,10 @@ Syllabus : {
       /*
        * Wrap Syllabus.lua.scripts commands with a function that gets
        * as argument the result object from the command encoding.
+       *
+       * NOTE: It is useful to automatically enqueue or write
+       * an encoded command to a socket.
+       * See usage example in Spade code: https//github.com/rootslab/spade
        */
       , wrap: function ( fn ) : Boolean
     }
