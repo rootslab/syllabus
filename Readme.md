@@ -1,4 +1,4 @@
-###Syllabus
+###Σ Syllabus
 [![build status](https://secure.travis-ci.org/rootslab/syllabus.png?branch=master)](http://travis-ci.org/rootslab/syllabus) 
 [![NPM version](https://badge.fury.io/js/syllabus.png)](http://badge.fury.io/js/syllabus)
 [![build status](https://david-dm.org/rootslab/syllabus.png)](https://david-dm.org/rootslab/syllabus)
@@ -7,13 +7,13 @@
 
 [![NPM](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
-> **_Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
+> **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
 > It also uses the __[Hoar](https://github.com/rootslab/hoar)__ module to handle semantic versioning, then __[Bolgia](https://github.com/rootslab/bolgia)__ and __[Abaco](https://github.com/rootslab/abaco)__ modules to get some utilities.
 
-> Moreover, **_Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
+> Moreover, **_Σ Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
-> __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
+> __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[♎ Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
@@ -27,7 +27,7 @@ $ npm install syllabus [-g]
 $ git clone git@github.com:rootslab/syllabus.git
 ```
 
-> __require__.
+> __require__:
 
 ```javascript
 var Syllabus  = require( 'syllabus' );

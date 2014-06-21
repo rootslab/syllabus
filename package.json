@@ -1,7 +1,7 @@
 {
   "name": "syllabus",
-  "version": "0.26.5",
-  "description": "Syllabus, a collection of helpers mix-ins to encode Redis commands, builded upon Sermone.",
+  "version": "0.26.6",
+  "description": "Syllabus, a collection of helpers mix-ins to encode Redis commands and to decode Redis replies, builded upon Sermone.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
   "repository": {
@@ -9,6 +9,7 @@
     "url": "git://github.com/rootslab/syllabus.git"
   },
   "keywords": [
+    "Σ",
     "syllabus",
     "command encoder",
     "protocol",
@@ -19,7 +20,7 @@
     "command mix-ins",
     "script cache",
     "LUA scripts",
-    "LUA"
+    "cache"
   ],
   "author": {
     "name": "Guglielmo Ferri",
@@ -29,7 +30,7 @@
     "abaco": ">=1.9.1",
     "bolgia" : ">=2.6.0",
     "hoar" : ">=0.7.1",
-    "sermone" : ">=1.6.1",
+    "sermone" : ">=1.6.2",
     "camphora" : ">=0.10.0"
     },
   "devDependencies": {},
