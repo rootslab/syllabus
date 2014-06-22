@@ -13,7 +13,7 @@
 
 > Moreover, **_Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
-> __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[♎ Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
+> __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
@@ -26,7 +26,6 @@ $ npm install syllabus [-g]
 // clone repo
 $ git clone git@github.com:rootslab/syllabus.git
 ```
-
 > __require__:
 
 ```javascript
@@ -104,21 +103,26 @@ Syllabus : {
      *
      * NOTE: It is useful to automatically enqueue or write
      * an encoded command to a socket.
-     * See usage example in Spade code: https//github.com/rootslab/spade
+     * See usage example in Spade code: https://github.com/rootslab/spade
      */
     , wrap : function ( Function wrapper ) : Boolean
 
     lua : {
       /*
        * Get current cache object/hash (Camphora instance).
+       * 
+       * NOTE: This property will remain empty until you call
+       * the #init method.
        */
-      cache : function () : Camphora
+      cache : Camphora | null
 
       /*
        * Initiliazing LUA script cache. Load all the files
        * found in the './lib/lua/scripts' directory, into the
        * cache; then encode all SCRIPT LOAD commands with
        * resulting data from files.
+       * Optionally you could pass a config hash, as the last
+       * argument, to create a new cache instance.
        *
        * - All script files are loaded in the local cache, a list
        *   of SCRIPT LOAD encoded commands will be passed to this
@@ -132,8 +136,20 @@ Syllabus : {
        *
        * 'onFileProcessed' : function ( Boolean is_err_reply, String scr_name, String scr_digest, String scr_txt, Boolean isLast )
        *
-       * 'file_load_opt' ( Spade default options are ) :
+       * Spade default options are:
        *
+       * 'cache_init_opt' : (default cache is pre-initialized with this options)
+       * {
+       *    capacity : 128
+       *    , encrypt_keys : false
+       *    , algorithm : 'sha1'
+       *    , input_encoding : 'binary'
+       *    , output_encoding : 'hex'
+       * }
+       *
+       * See Camphora constructor options at https://github.com/rootslab/camphora#options.
+       *
+       * 'file_load_opt' :
        * {
        *    // set encoding to utf8
        *    encoding : 'utf8'
@@ -142,9 +158,9 @@ Syllabus : {
        *    , filepath : __dirname + '/scripts'
        * }
        *
-       * See Camphora#load options.
+       * See Camphora#load options at https://github.com/rootslab/camphora#methods.
        */
-      , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt ] ) : undefined
+      , init : function ( Function onCacheLoaded, Function onFileProcessed [, Object file_load_opt [, Object cache_init_opt] ] ) : undefined
 
       /*
        * SCRIPT commands shortcuts that updating the cache.
