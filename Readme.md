@@ -326,7 +326,7 @@ obj = {
 }
 ```
 
-> if an __error__ occurred while encoding a command, the obj/hash will be something like::
+> if an __error__ occurred while encoding a command, the obj/hash will be something like:
 
 ```javascript
 obj = {
