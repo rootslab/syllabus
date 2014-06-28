@@ -349,8 +349,6 @@ obj = {
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'del' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
 'dump' : function ( Number key | String key [, Function cback ] ) : Object
@@ -463,8 +461,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'append' : function ( Number key | String key, Number value | String value [, Function cback ] ) : Object
 
 'bitcount' : function ( Number key | String key [, Array range [, Function cback ] ] ) : Object
@@ -570,8 +566,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'hdel' : function ( Number key | String key, String field | Array fields [, Function cback ] ) : Object
 
 'hexists' : function ( Number key | String key, String field [, Function cback ] ) : Object
@@ -656,8 +650,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'blpop' : function ( Number key | String key, Number timeout | String timeout [, Function cback ] ) : Object
 
 'brpop' : function ( Number key | String key, Number timeout | String timeout [, Function cback ] ) : Object
@@ -702,8 +694,6 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'sadd' : function ( Number key | String key, String member | Array members [, Function cback ] ) : Object
 
@@ -758,8 +748,6 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 /*
  * zadd accepts an Array of scores and members or an Object:
@@ -866,8 +854,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'pfadd' : function ( Number key | String key, String channel | Array channels [, Function cback ] ) : Object
 
 'pfcount' : function ( Number key | String key, Array keys [, Function cback ] ) : Object
@@ -884,8 +870,6 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'publish' : function ( String channel, String message [, Function cback ] ) : Object
 
@@ -917,8 +901,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'discard' : function ( [ Function cback ] ) : Object
 
 'exec' : function ( [ Function cback ] ) : Object
@@ -939,8 +921,6 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 /*
  * eval accepts 2 Arrays of keys and args.
@@ -982,8 +962,6 @@ _[Back to Index](#syllabus-commands)_
 
 ```javascript
 
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
-
 'auth' : function ( String password [, Function cback ] ) : Object
 
 'echo' : function ( Number string | String string [, Function cback ] ) : Object
@@ -1004,8 +982,6 @@ _[Back to Index](#syllabus-commands)_
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
 ```javascript
-
-// NOTE: first mix-in argument, generally the "key", could be a Number, but not 0, use '0' instead.
 
 'bgrewriteaof' : function ( [ Function cback ] ) : Object
 
