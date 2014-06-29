@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 /* 
- * Syllabus, wrap commands with a funciton.
+ * Syllabus, wrap commands with a function.
  */
 
 var log = console.log
     , util = require( 'util' )
-    // get Syllabus in develop mode
-    , Syllabus = require( '../' )( true )
+    , Syllabus = require( '../' )()
     // commands
     , commands = Syllabus.commands
     // a function wrapper for commands results

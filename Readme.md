@@ -109,12 +109,13 @@ Syllabus : {
 
     lua : {
       /*
-       * Get current cache object/hash (Camphora instance).
+       * The current initialized cache object/hash for LUA scripts,
+       * a Camphora instance.
        * 
-       * NOTE: This property will remain empty until you call
-       * the #init method.
+       * NOTE: This property will remain hidden/empty until you call
+       * the #init method to explicitly show the LUA cache for scripts.
        */
-      cache : Camphora | null
+      cache : null | Camphora
 
       /*
        * Initiliazing LUA script cache. Load all the files
@@ -136,7 +137,7 @@ Syllabus : {
        *
        * 'onFileProcessed' : function ( Boolean is_err_reply, String scr_name, String scr_digest, String scr_txt, Boolean isLast )
        *
-       * Spade default options are:
+       * Syllabus default options are:
        *
        * 'cache_init_opt' : (default cache is pre-initialized with this options)
        * {
@@ -168,9 +169,8 @@ Syllabus : {
       , script : {
           
           /*
-           * Flush Spade cache.
-           * It returns encoded "SCRIPT FLUSH"
-           * command to clear Redis cache.
+           * Flush Syllabus.lua.cache. It returns encoded "SCRIPT FLUSH" command
+           * to s also the Redis cache.
            */
           flush : function ( [ Function cback ] ) : Object
 
@@ -184,7 +184,7 @@ Syllabus : {
            * Run a LUA script from the cache using its key/name.
            * It returns encoded "EVALSHA digest" command.
            */
-          , run : function ( String key, Array keys, Array args [, Function cback ] ) : Object
+          , run : function ( String sname, Array keys, Array args [, Function cback ] ) : Object
       }
       /*
        * Wrap Syllabus.lua.scripts commands with a function that gets
