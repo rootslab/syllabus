@@ -169,16 +169,19 @@ Syllabus : {
       , script : {
           
           /*
-           * Flush Syllabus.lua.cache. It returns encoded "SCRIPT FLUSH" command
-           * to s also the Redis cache.
+           * Flush Syllabus.lua.cache. 'fback' function will be called with the number
+           * of elements flushed from the cache.
+           * It returns encoded "SCRIPT FLUSH" command for Redis.
            */
-          flush : function ( [ Function cback ] ) : Object
+          flush : function ( [ Function cback [, Function fback ] ] ) : Object
 
           /*
            * Load a key/script into the cache.
+           * 'lback' function will be called with an argument that represents the entry
+           * loaded in the cache, or undefined if an error occurs. 
            * It returns encoded "SCRIPT LOAD data" command for Redis. 
            */
-          , load : function ( String key, String data [, Function cback ] ) : Object
+          , load : function ( String key, String data [, Function cback [, Function lback ] ] ) : Object
 
           /*
            * Run a LUA script from the cache using its key/name.

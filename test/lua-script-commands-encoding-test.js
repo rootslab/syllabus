@@ -8,11 +8,6 @@ var log = console.log
     , assert = require( 'assert' )
     , crypto = require( 'crypto' )
     , util = require( 'util' )
-    , Bolgia = require( 'bolgia' )
-    , toString = Bolgia.toString
-    , count = Bolgia.count
-    , ooo = Bolgia.circles
-    , oobj = ooo.obj
     , Syllabus = require( '../' )()
     // commands
     , lua = Syllabus.lua
