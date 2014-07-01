@@ -38,6 +38,14 @@ var Syllabus  = require( 'syllabus' );
 $ cd syllabus/
 $ npm test
 ```
+
+###Run Benchmark
+
+```bash
+$ cd syllabus/
+$ npm run-script bench
+```
+
 ###Constructor
 
 > Create an instance.
