@@ -867,7 +867,7 @@ _[Back to Index](#syllabus-commands)_
 
 'pfadd' : function ( Number key | String key, String channel | Array channels [, Function cback ] ) : Object
 
-'pfcount' : function ( Number key | String key, Array keys [, Function cback ] ) : Object
+'pfcount' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
 'pfmerge' : function ( Number dest | String dest, String source | Array sources [, Function cback ] ) : Object
 
