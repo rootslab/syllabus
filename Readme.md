@@ -212,10 +212,13 @@ Syllabus : {
        * an hash of utilities to format special replies.
        */
       , formatters: {
-
           /*
-           * format/convert a string like: 'monitor 1404871788.612598 [0 127.0.0.1:35604] "ping"',
-           * to :
+           * format/convert a string like:
+           *
+           * - 'monitor 1404871788.612598 [0 127.0.0.1:35604] "ping"'
+           * 
+           * to an object/hash:
+           *
            * {
            *  ip : '127.0.0.1'
            *  , port : 35604
@@ -224,11 +227,10 @@ Syllabus : {
            *  , db : 0
            *  , cmd : '"ping"'
            * }
+           *
            */
           monitor : function ( String message ) : Object
-
       }
-      
 
     }
 
