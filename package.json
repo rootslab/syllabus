@@ -1,6 +1,6 @@
 {
   "name": "syllabus",
-  "version": "0.30.1",
+  "version": "0.31.0",
   "description": "Σ Syllabus, a collection of helpers mix-ins to encode Redis commands and to decode Redis replies, builded upon Sermone.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
@@ -17,6 +17,7 @@
     "Redis",
     "Redis protocol",
     "Redis commands",
+    "Redis reply formatter",
     "command mix-ins",
     "script cache",
     "LUA scripts",

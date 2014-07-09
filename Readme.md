@@ -197,6 +197,7 @@ Syllabus : {
            */
           , run : function ( String sname, Array keys, Array args [, Function cback ] ) : Object
       }
+      
       /*
        * Wrap Syllabus.lua.scripts commands with a function that gets
        * as argument the result object from the command encoding.
@@ -206,6 +207,29 @@ Syllabus : {
        * See usage example in Spade code: https//github.com/rootslab/spade
        */
       , wrap: function ( fn ) : Boolean
+      
+      /*
+       * an hash of utilities to format special replies.
+       */
+      , formatters: {
+
+          /*
+           * format/convert a string like: 'monitor 1404871788.612598 [0 127.0.0.1:35604] "ping"',
+           * to :
+           * {
+           *  ip : '127.0.0.1'
+           *  , port : 35604
+           *  , utime : 1404871788612
+           *  , msecs :  0.598
+           *  , db : 0
+           *  , cmd : '"ping"'
+           * }
+           */
+          monitor : function ( String message ) : Object
+
+      }
+      
+
     }
 
     /* NOTE: methods below exist only in develop mode. */
