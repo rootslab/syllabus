@@ -230,6 +230,33 @@ Syllabus : {
            *
            */
           monitor : function ( String message ) : Object
+
+          /*
+           * Format/convert a pubsub message to an object.
+           *
+           * NOTE: the 'formatter' function converts an Array like:
+           *
+           * - [ unsubscribe, 'channel', 0 ]
+           *
+           * to an object/hash:
+           *
+           * {
+           *  type : 'unsubscribe'
+           *  , chan : 'channel'
+           *  . subs : 0
+           * }
+           *
+           * - [ 'message', 'channel', 'Hello folks!' ]
+           *
+           * to an object/hash:
+           *
+           * {
+           *  type : 'message'
+           *  , chan : 'channel'
+           *  . msg : 'Hello folks!!'
+           * }
+           */
+         , message : function ( Array message ) : Object
       }
 
     }
