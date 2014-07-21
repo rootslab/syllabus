@@ -1,11 +1,19 @@
 ###Σ Syllabus
-[![build status](https://secure.travis-ci.org/rootslab/syllabus.png?branch=master)](http://travis-ci.org/rootslab/syllabus) 
-[![NPM version](https://badge.fury.io/js/syllabus.png)](http://badge.fury.io/js/syllabus)
-[![build status](https://david-dm.org/rootslab/syllabus.png)](https://david-dm.org/rootslab/syllabus)
 
-[![NPM](https://nodei.co/npm/syllabus.png?downloads=true&stars=true)](https://nodei.co/npm/syllabus/)
+[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/syllabus#mit-license)
 
-[![NPM](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
+[![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg)](https://www.npmjs.org/package/syllabus)
+[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg)](http://travis-ci.org/rootslab/syllabus)
+[![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg)](https://david-dm.org/rootslab/syllabus)
+
+[![NPM GRAPH1](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
+
+[![GITHUB tag](http://img.shields.io/github/tag/rootslab/syllabus.svg)](https://github.com/rootslab/syllabus/tags)
+[![ISSUES](http://img.shields.io/github/issues/rootslab/syllabus.svg)](https://github.com/rootslab/syllabus/issues)
+[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
+[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg)](http://npm-stat.com/charts.html?package=syllabus)
+
+[![NPM GRAPH2](https://nodei.co/npm/syllabus.png?downloads=true&stars=true)](https://nodei.co/npm/syllabus/)
 
 > **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
 
