@@ -25,7 +25,7 @@
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[Libra](#)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
-> Now __[169](#syllabus-commands)__ Redis commands mix-ins are implemented.
+> Now __[170](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ###Install
 
@@ -286,7 +286,7 @@ Syllabus : {
      *   cmd: 'PING',
      *   sub: [],
      *   url: 'http://redis.io/commands/ping'
-     *   rtype: '+',
+     *   rtype: '+|$|*',
      *   since: '1.0.0',
      *   hint: 'PING',
      *   descr: 'Ping the server.'
@@ -1041,7 +1041,11 @@ _[Back to Index](#syllabus-commands)_
 
 'echo' : function ( Number string | String string [, Function cback ] ) : Object
 
+// legacy ping
 'ping' : function ( [ Function cback ] ) : Object
+
+// Redis >= 2.8.x ping, available also in pubsub mode
+'ping' : function ( [ String message, [ Function cback ] ] ) : Object
 
 'quit' : function ( [ Function cback ] ) : Object
 
@@ -1127,6 +1131,39 @@ _[Back to Index](#syllabus-commands)_
 'lastsave' : function ( [ Function cback ] ) : Object
 
 'monitor' : function ( [ Function cback ] ) : Object
+
+ /*
+  * ROLE reply:
+  *
+  * - for MASTER:   [ 'master', 155, [ [ '127.0.0.1', 6380, 155 ], [ '127.0.0.1', 6381, 155 ] ] ] ]
+  * - for SLAVE:    [ 'slave','127.0.0.1', 6379,'connected', 155 ] ]
+  * - for SENTINEL: [ sentinel, [ 'master_name_1', ,,,, 'master_name_N' ] ]
+  *
+  * The utility fn passed to the callback, if applied to data, converts results in this way:
+  *
+  * - for a master:
+  *  {
+  *    type: 'master',
+  *    replica_offset: 155,
+  *    connected_slaves: [ [ '127.0.0.1', 6380, 155 ], [ '127.0.0.1', 6381, 155 ] ]
+  *  }
+  *
+  * - for a slave:
+  *  {
+  *    type: 'slave',
+  *    master_ip: '127.0.0.1',
+  *    master_port: 6380,
+  *    replica_status: 'connected',
+  *    replica_offset: 155
+  *  }
+  *
+  * - for a sentinel:
+  *  {
+  *    type: 'slave',
+  *    master_names : [ 'master_name_1', ,,,, 'master_name_N' ]
+  *  }
+  */
+'role' : function ( [ Function cback ] ) : Object
 
 'save' : function ( [ Function cback ] ) : Object
 
