@@ -1,8 +1,6 @@
 ###Σ Syllabus
 
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/syllabus#mit-license)
-[![GITHUB tag](http://img.shields.io/github/tag/rootslab/syllabus.svg)](https://github.com/rootslab/syllabus/tags)
-[![ISSUES](http://img.shields.io/github/issues/rootslab/syllabus.svg)](https://github.com/rootslab/syllabus/issues)
 [![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
 [![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg)](http://npm-stat.com/charts.html?package=syllabus)
 
