@@ -1103,6 +1103,19 @@ _[Back to Index](#syllabus-commands)_
     'set' : function ( String param, Number value | String value [, Function cback ] ) : Object
 }
 
+'command' : {
+    /*
+     * COMMAND LIST doesn't exists. is a placeholder for COMMAND.
+     */
+    'list' : function ( [ Function cback ] ) : Object
+
+    'info' : function ( String cmd | Array list [ Function cback ] ) : Object
+
+    'getkeys' : function ( String cmd | Array cmd [, Function cback ] ) : Object
+
+    'count' : function ( [ Function cback ] ) : Object
+}
+
 'dbsize' : function ( [ Function cback ] ) : Object
 
 'debug' : {
