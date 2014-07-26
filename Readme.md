@@ -333,7 +333,8 @@ Syllabus : {
 
     /*
      * Get the current number of commands in the syllabus
-     * and of keywords types.
+     * and of keywords types, #size method counts also empty
+     * parent commands.
      */
     , size : function () : Number
 
@@ -354,12 +355,14 @@ __Types:__
 - [Lists](#lists) : _17 commands_.
 - [Sets](#sets) : _15 commands_.
 - [Sorted Sets](#sorted-sets) : _20 commands_.
-- [HyperLogLog](#hyperloglog) : _3 commands_.
+- [HyperLogLog](#hyperloglog) : _4 commands_.
 - [PubSub](#pubsub) : _8 commands_.
 - [Transactions](#transactions) : _5 commands_.
 - [Scripting](#scripting) : _6 commands_.
 - [Connection](#connection) : _5 commands_.
-- [Server](#server) : _27 commands_.
+- [Server](#server) : _32 commands_.
+
+> __NOTE:__ empty parent commands like DEBUG, CLIENT, .., are not counted.
 
 > Every Syllabus command returns an obj/hash like this:
 
@@ -920,7 +923,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####HYPERLOGLOG
 
-> _Redis [HyperLogLog](http://redis.io/commands#hyperloglog), 3 commands_.
+> _Redis [HyperLogLog](http://redis.io/commands#hyperloglog), 4 commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -931,6 +934,8 @@ _[Back to Index](#syllabus-commands)_
 'pfcount' : function ( Number key | String key | Array keys [, Function cback ] ) : Object
 
 'pfmerge' : function ( Number dest | String dest, String source | Array sources [, Function cback ] ) : Object
+
+'pfselftest' : function ( [ Function cback ] ) : Object
 
 ```
 _[Back to Index](#syllabus-commands)_
@@ -1056,7 +1061,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####SERVER
 
-> _Redis [Server](http://redis.io/commands#server), 27 commands + 4 empty parent commands_.
+> _Redis [Server](http://redis.io/commands#server), 32 commands + 5 empty parent commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
