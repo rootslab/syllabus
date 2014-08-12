@@ -34,16 +34,37 @@
             , fails = 0
             , success = 0
             , executed = 0
+            , finished = 0
+            , queue = []
+            , qpos = 0
+            , stime = -1
+            , etime = -1
+            , done = function ( wait ) {
+                if ( ++finished < success ) return setTimeout( next, wait || 500 );
+                etime = Date.now();
+                // log( '\n%s files found.', inspect( flen ) );
+                // log( '%s files skipped.', inspect( flen - executed ) );
+                log( '\n %s test files executed.', inspect( executed ) );
+                log( ' %s test files succeeded.', inspect( success ) );
+                log( ' %s test files failed.%s', inspect( fails ), fails ? '\n' + inspect( failed, true, 10, true ) : '' );
+                log( ' \n time elapsed: %s secs.\n', inspect( + ( ( etime - stime ) / 1000 ).toFixed( 2 ) ) );
+            }
+            , next = function () {
+                if ( qpos < queue.length ) {
+                    log( '\n[ %s v%s - %s ]\n', mname, mver, inspect( queue[ qpos++ ] ) );
+                    queue[ qpos++ ]( done );
+                }
+            }
             ;
-
+        // load file list
         for ( ; f < flen; fname = files[ ++f ] ) {
+            // load only test files
             if ( ~ fname.indexOf( '-test.js' ) ) {
                 ++executed;
                 // run script
-                log( '\n[ %s v%s - %s ]\n', mname, mver, inspect( fname ) );
                 try {
-                    require( './' + fname );
-                    ++success
+                    queue.push( fname, require( './' + fname ).test );
+                    ++success;
                 } catch ( e ) {
                     ++fails;
                     if ( ! failed[ fname ] ) failed[ fname ] = [];
@@ -51,8 +72,9 @@
                 }
             }
         }
-        log( '\n%s test files executed.', inspect( executed ) );
-        log( '%s test files succeeded.', inspect( success ) );
-        log( '%s test files failed.%s', inspect( fails ), fails ? '\n' + inspect( failed ) +'\n' : '\n' );
+        // start
+        stime = Date.now();
+        next();
     } );
+
 } )();
