@@ -16,15 +16,13 @@
 
 [![NPM GRAPH2](https://nodei.co/npm/syllabus.png?downloads=true&stars=true)](https://nodei.co/npm/syllabus/)
 
-> **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__.
+> **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__.; moreover, it mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
 > It also uses the __[Hoar](https://github.com/rootslab/hoar)__ module to handle semantic versioning, then __[Bolgia](https://github.com/rootslab/bolgia)__ and __[Abaco](https://github.com/rootslab/abaco)__ modules to get some utilities.
 
-> Moreover, **_Syllabus_** mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
-
 > __NOTE:__ If you need to handle bindings between _**Syllabus**_ commands and _**Redis**_ replies, take a look at __[♎ Libra](https://github.com/rootslab/libra)__, it uses __[Train](https://github.com/rootslab/train)__ queue under the hood, to get a simple _**rollback mechanism**_ for commands, and to gain some performances in some particular situations.
 
-> __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
+> __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Σ Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
 > Now __[170](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
