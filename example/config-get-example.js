@@ -1,7 +1,5 @@
 var log = console.log
-    , assert = require( 'assert' )
     , util = require( 'util' )
-    , Bolgia = require( 'bolgia' )
     , Syllabus = require( '../' )()
     // reply from "CONFIG GET *"
     , reply = [
@@ -65,10 +63,9 @@ var log = console.log
     // encode command
     , cfg_get_cmd = Syllabus.commands.config.get( '*' )
     // use resulting utility fn to convert array
-    , hash = cfg_get_cmd.fn( reply );
+    , hash = cfg_get_cmd.fn( reply )
     ;
 
 log( '- reply from "CONFIG GET *":\n', util.inspect( reply, false, 1, true ) );
 
 log( '- fn(hash) result:\n', util.inspect( hash, false, 1, true ) );
-
