@@ -21,7 +21,7 @@ exports.test = function ( done ) {
         // a function wrapper
         , fn = function( ocmd ) {
             --c;
-            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.cmd, false, 1, true ) );
+            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.ecmd || ocmd.cmd, false, 1, true ) );
         }
         , c = 0
         , cnt = 0
@@ -45,7 +45,7 @@ exports.test = function ( done ) {
 
     Syllabus.wrap( fn );
 
-    log( '- scan all Syllabus.commands and execute without arguments.' );
+    log( '- scan all Syllabus.commands and encode without arguments.' );
 
     scan( commands );
 

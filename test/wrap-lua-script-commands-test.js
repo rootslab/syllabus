@@ -21,7 +21,7 @@ exports.test = function ( done ) {
         // a function wrapper
         , fn = function( ocmd ) {
             --c;
-            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.cmd, false, 1, true ) );
+            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.ecmd || ocmd.cmd, false, 1, true ) );
         }
         , c = 0
         , cnt = 0
@@ -45,7 +45,7 @@ exports.test = function ( done ) {
 
     lua.wrap( fn );
 
-    log( '- scan Syllabus.lua.script.' );
+    log( '- scan Syllabus.lua.script and encode without arguments.' );
 
     scan( lua.script );
 
