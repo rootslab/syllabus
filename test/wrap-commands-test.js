@@ -7,6 +7,7 @@
 var log = console.log
     , assert = require( 'assert' )
     , util = require( 'util' )
+    , inspect = util.inspect
     , Bolgia = require( 'bolgia' )
     , toString = Bolgia.toString
     , count = Bolgia.count
@@ -18,6 +19,7 @@ var log = console.log
     // a function wrapper
     , fn = function( ocmd ) {
         --c;
+        log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.cmd, false, 1, true ) );
     }
     , c = 0
     , cnt = 0
@@ -40,11 +42,11 @@ log( '- #wrap Syllabus commands with a dummy function.' );
 
 Syllabus.wrap( fn );
 
-log( '- scan Syllabus.commands.' );
+log( '- scan all Syllabus.commands and execute without arguments.' );
 
 scan( commands );
 
-log( '- check number of command scanned. should be:', count( commands, true ) );
+log( '- check number of command scanned. should be: %s.', inspect( count( commands, true ), false, 1, true ) );
 assert.equal( cnt, count( commands, true ) );
 
 log( '- check if all commands have been wrapped.' );
