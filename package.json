@@ -1,6 +1,6 @@
 {
   "name": "syllabus",
-  "version": "0.33.6",
+  "version": "0.33.7",
   "description": "Σ Syllabus, a collection of helpers mix-ins to encode Redis commands and to decode Redis replies, builded upon Sermone.",
   "homepage": "https://github.com/rootslab/syllabus",
   "private": false,
@@ -28,11 +28,11 @@
     "email": "44gatti@gmail.com"
   },
   "dependencies": {
-    "abaco": "=1.9.1",
-    "bolgia" : "=2.6.2",
-    "hoar" : "=0.7.2",
-    "sermone" : "=1.7.2",
-    "camphora" : "=0.15.1"
+    "abaco": "=1.10.1",
+    "bolgia" : ">=2.7.0",
+    "hoar" : "=0.7.5",
+    "sermone" : "=1.7.4",
+    "camphora" : "=0.15.4"
     },
   "devDependencies": {
    },

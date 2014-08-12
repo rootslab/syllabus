@@ -1,13 +1,16 @@
 ###Σ Syllabus
 
-[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/syllabus#mit-license)
-[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
-[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg)](http://npm-stat.com/charts.html?package=syllabus)
+[[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
+[![CODECLIMATE-TEST-COVERAGE](http://img.shields.io/codeclimate/coverage/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 
-[![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg)](https://www.npmjs.org/package/syllabus)
-[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg)](http://travis-ci.org/rootslab/syllabus)
-[![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg)](https://david-dm.org/rootslab/syllabus)
-[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/syllabus.svg)](https://david-dm.org/rootslab/syllabus#info=devDependencies)
+[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/syllabus#mit-license)
+[![GITTIP](http://img.shields.io/gittip/rootslab.svg?style=flat)](https://www.gittip.com/rootslab/)
+[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg?style=flat)](http://npm-stat.com/charts.html?package=syllabus)
+
+[![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg?style=flat)](https://www.npmjs.org/package/syllabus)
+[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg?style=flat)](http://travis-ci.org/rootslab/syllabus)
+[![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus)
+[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus#info=devDependencies)
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
