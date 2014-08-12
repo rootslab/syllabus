@@ -1,6 +1,6 @@
 ###Σ Syllabus
 
-[[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
+[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 [![CODECLIMATE-TEST-COVERAGE](http://img.shields.io/codeclimate/coverage/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/syllabus#mit-license)
