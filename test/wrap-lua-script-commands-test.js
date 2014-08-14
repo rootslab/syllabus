@@ -4,10 +4,9 @@
  * Syllabus, #wrap lua scripts commands test.
  */
 
-exports.test = function ( done ) {
+exports.test = function ( done, assertions ) {
 
     var log = console.log
-        , assert = require( 'assert' )
         , util = require( 'util' )
         , inspect = util.inspect
         , Bolgia = require( 'bolgia' )
@@ -50,10 +49,10 @@ exports.test = function ( done ) {
     scan( lua.script );
 
     log( '- check number of command scanned. should be: %s.', inspect( count( lua.script, true ), false, 1, true ) );
-    assert.equal( cnt, count( lua.script, true ) );
+    assertions.isEqual( cnt, count( lua.script, true ) );
 
     log( '- check if all LUA script methods have been wrapped.' );
-    assert.equal( c, 0 );
+    assertions.isEqual( c, 0 );
 
     exit();
 };

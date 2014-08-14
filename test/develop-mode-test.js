@@ -4,10 +4,9 @@
  * Syllabus development mode test
  */
 
-exports.test = function ( done ) {
+exports.test = function ( done, assertions ) {
         
     var log = console.log
-        , assert = require( 'assert' )
         , util = require( 'util' )
         , Bolgia = require( 'bolgia' )
         , ooo = Bolgia.circles
@@ -28,9 +27,9 @@ exports.test = function ( done ) {
 
     log( '- check existence of #encode, #stick and #size methods.' );
 
-    assert.ok( toString( t.encode ) === ooo.fun );
-    assert.ok( toString( t.stick ) === ooo.fun );
-    assert.ok( toString( t.size ) === ooo.fun );
+    assertions.isOK( toString( t.encode ) === ooo.fun );
+    assertions.isOK( toString( t.stick ) === ooo.fun );
+    assertions.isOK( toString( t.size ) === ooo.fun );
 
     log( '- run #stick to add #info to all commands.' );
 
@@ -50,7 +49,7 @@ exports.test = function ( done ) {
                 continue;
             }
             ++k;
-            assert.ok( toString( cmd.info ) === otype, util.inspect( cmd, false, 1, true ) );
+            assertions.isOK( toString( cmd.info ) === otype, util.inspect( cmd, false, 1, true ) );
         };
     };
 
@@ -58,12 +57,12 @@ exports.test = function ( done ) {
 
     log( '- check the number of scanned commands, expected (%d).', t.size().commands );
 
-    assert.ok( k, n );
-    assert.ok( t.size().commands, k );
+    assertions.isOK( k, n );
+    assertions.isOK( t.size().commands, k );
 
     log( '- run #unstick to remove #info method property from all commands (%d).', t.size().commands );
 
-    assert.ok( t.stick( 0 ), n );
+    assertions.isOK( t.stick( 0 ), n );
 
     log( '- check if #info was removed from all commands.' );
 

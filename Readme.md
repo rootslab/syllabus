@@ -24,7 +24,7 @@
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Σ Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
-> Now __[170](#syllabus-commands)__ Redis commands mix-ins are implemented.
+> Now __[175](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ###Install
 

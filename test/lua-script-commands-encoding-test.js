@@ -4,10 +4,9 @@
  * Syllabus, lua scripts commands test.
  */
 
-exports.test = function ( done ) {
+exports.test = function ( done, assertions ) {
 
     var log = console.log
-        , assert = require( 'assert' )
         , crypto = require( 'crypto' )
         , util = require( 'util' )
         , Syllabus = require( '../' )()
@@ -31,10 +30,10 @@ exports.test = function ( done ) {
 
     log( '- check if SCRIPT LOAD result is properly encoded.' );
     cmd = Syllabus.encode( 'SCRIPT', 'LOAD', sdata, null, fn );
-    assert.deepEqual( result, cmd );
+    assertions.isDeepEqual( result, cmd );
 
     log( '- LUA cache should be hidden (null) until #init is called.' );
-    assert.equal( lua.cache, null );
+    assertions.isEqual( lua.cache, null );
 
     log( '- execute lua.script#run with a script name that is present in the lua.cache.' );
     result = lua.script.run( sname, keys, args, null, fn );
@@ -42,19 +41,19 @@ exports.test = function ( done ) {
     log( '- execute lua.script#run and check encoded EVALSHA command (correct data digest).' );
     cmd = Syllabus.encode( 'EVALSHA', ddigest, list, null, fn );
     // now compare results
-    assert.deepEqual( result.ecmd, cmd.ecmd );
+    assertions.isDeepEqual( result.ecmd, cmd.ecmd );
 
     log( '- execute lua.script#run with a script name that is not present in the LUA cache.' );
     result = lua.script.run( 'script_no_name', [], [], null, fn );
 
     log( '- result should contain an Error property.' );
-    assert.ok( result.err instanceof Error );
+    assertions.isOK( result.err instanceof Error );
 
     log( '- execute Syllabus.lua.script#flush.' );
     result = lua.script.flush( fn );
 
     log( '- check if SCRIPT FLUSH result is properly encoded.' );
-    assert.deepEqual( result, Syllabus.encode( 'SCRIPT', 'FLUSH', null, fn ) );
+    assertions.isDeepEqual( result, Syllabus.encode( 'SCRIPT', 'FLUSH', null, fn ) );
 
     exit();
 

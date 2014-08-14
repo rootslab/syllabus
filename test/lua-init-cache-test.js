@@ -4,10 +4,9 @@
  * Syllabus, #init cache test.
  */
 
-exports.test = function ( done ) {
+exports.test = function ( done, assertions ) {
 
     var log = console.log
-        , assert = require( 'assert' )
         , util = require( 'util' )
         , Syllabus = require( '../' )()
         // commands
@@ -21,36 +20,36 @@ exports.test = function ( done ) {
         }
         , onCacheLoad = function ( commands ) {
             log( '- all script files have been loaded into the cache.' );
-            assert.ok( lua.cache !== null );
+            assertions.isOK( lua.cache !== null );
 
             log( '- execute lua.script#load( %s, %s, %s )', sname[ 0 ], sdata, fn );
             lua.script.load( sname[ 0 ], sdata, fn, function ( entry ) {
                 log( '- check script entry:', sname[ 0 ] );
-                assert.deepEqual( lua.cache.read( sname[ 0 ] ), entry );
+                assertions.isDeepEqual( lua.cache.read( sname[ 0 ] ), entry );
             } )
 
             log( '- execute lua.script#load( %s, %s, %s )', sname[ 1 ], sdata, fn );
             lua.script.load( sname[ 1 ], sdata, fn, function ( entry ) {
                 log( '- check script entry:', sname[ 1 ] );
-                assert.deepEqual( lua.cache.read( sname[ 1 ] ), entry );
+                assertions.isDeepEqual( lua.cache.read( sname[ 1 ] ), entry );
             } );
 
             log( '- execute lua.script#load( %s, %s, %s )', sname[ 2 ], sdata, fn );
             lua.script.load( sname[ 2 ], sdata, fn, function ( entry ) {
                 log( '- check script entry:', sname[ 2 ] );
-                assert.deepEqual( lua.cache.read( sname[ 2 ] ), entry );
+                assertions.isDeepEqual( lua.cache.read( sname[ 2 ] ), entry );
             } );
 
-            assert.ok( lua.cache.size()[ 0 ] >= 3 );
+            assertions.isOK( lua.cache.size()[ 0 ] >= 3 );
 
             log( '- execute Syllabus.lua.script#flush.' );
             lua.script.flush( fn, function ( k ) {
                 log( '- check number of element evicted from cache (%d).', k );
-                assert.ok( k >= 3 );
+                assertions.isOK( k >= 3 );
             } );
 
             log( '- check if the cache is empty.' );
-            assert.ok( lua.cache.size()[ 0 ] = [ 0, 0 ] );
+            assertions.isOK( lua.cache.size()[ 0 ] = [ 0, 0 ] );
         }
         , file_opt = {
         }

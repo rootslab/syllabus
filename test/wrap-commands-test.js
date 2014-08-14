@@ -4,10 +4,9 @@
  * Syllabus, #wrap commands test.
  */
 
-exports.test = function ( done ) {
+exports.test = function ( done, assertions ) {
 
     var log = console.log
-        , assert = require( 'assert' )
         , util = require( 'util' )
         , inspect = util.inspect
         , Bolgia = require( 'bolgia' )
@@ -50,10 +49,10 @@ exports.test = function ( done ) {
     scan( commands );
 
     log( '- check number of command scanned. should be: %s.', inspect( count( commands, true ), false, 1, true ) );
-    assert.equal( cnt, count( commands, true ) );
+    assertions.isEqual( cnt, count( commands, true ) );
 
     log( '- check if all commands have been wrapped.' );
-    assert.equal( c, 0 );
+    assertions.isEqual( c, 0 );
 
     exit();
 
