@@ -964,12 +964,11 @@ _[Back to Index](#syllabus-commands)_
 
 'subscribe' : function ( Number channel | String channel | Array channels [, Function cback ] ) : Object
 
-/*
- * NOTE: to unsubscribe from all channels use null or [].
- */
 'unsubscribe' : function ( [ String channel | Array channels [, Function cback ] ] ) : Object
 
 ```
+> __NOTE__: to unsubscribe from all channels use null or [].
+
 _[Back to Index](#syllabus-commands)_
 
 ####TRANSACTIONS
