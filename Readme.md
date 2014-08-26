@@ -24,7 +24,7 @@
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Σ Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
-> Now __[175](#syllabus-commands)__ Redis commands mix-ins are implemented.
+> Now __[176](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ###Install
 
@@ -359,7 +359,7 @@ __Types:__
 - [Transactions](#transactions) : _5 commands_.
 - [Scripting](#scripting) : _6 commands_.
 - [Connection](#connection) : _5 commands_.
-- [Server](#server) : _32 commands_.
+- [Server](#server) : _33 commands_.
 
 > __NOTE:__ empty parent commands like DEBUG, CLIENT, .., are not counted.
 
@@ -1059,7 +1059,7 @@ _[Back to Index](#syllabus-commands)_
 
 ####SERVER
 
-> _Redis [Server](http://redis.io/commands#server), 32 commands + 5 empty parent commands_.
+> _Redis [Server](http://redis.io/commands#server), 33 commands + 6 empty parent commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -1090,6 +1090,10 @@ _[Back to Index](#syllabus-commands)_
     'setname' : function ( Number name | String name [, Function cback ] ) : Object
 }
 
+'cluster' : {
+  'slots' : function ( [ Funciton cback ] ) : Object
+}
+
 'config' : {
     /*
      * The utility fn returned by the #config.get mix-in,
@@ -1108,7 +1112,7 @@ _[Back to Index](#syllabus-commands)_
 
 'command' : {
     /*
-     * COMMAND LIST doesn't exists. is a placeholder for COMMAND.
+     * COMMAND LIST doesn't exists; it is s a placeholder for COMMAND.
      */
     'list' : function ( [ Function cback ] ) : Object
 
