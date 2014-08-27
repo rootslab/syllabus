@@ -14,7 +14,7 @@
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
-[![NPM GRAPH2](https://nodei.co/npm/syllabus.png?downloads=true&stars=true)](https://nodei.co/npm/syllabus/)
+[![NPM GRAPH2](https://nodei.co/npm/syllabus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/syllabus/)
 
 > **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__; moreover, it mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
