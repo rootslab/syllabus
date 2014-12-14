@@ -1,16 +1,19 @@
 ###Σ Syllabus
 
-[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
-[![CODECLIMATE-TEST-COVERAGE](http://img.shields.io/codeclimate/coverage/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
+[![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg)](https://www.npmjs.org/package/syllabus)
+[![CODACY BADGE](https://img.shields.io/codacy/b18ed7d95b0a4707a0ff7b88b30d3def.svg)](https://www.codacy.com/public/44gatti/syllabus)
+[![CODECLIMATE-TEST-COVERAGE](https://codeclimate.com/github/rootslab/syllabus/badges/coverage.svg)](https://codeclimate.com/github/rootslab/syllabus)
+[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rootslab/syllabus#mit-license)
 
-[![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/syllabus#mit-license)
-[![GITTIP](http://img.shields.io/gittip/rootslab.svg?style=flat)](https://www.gittip.com/rootslab/)
-[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg?style=flat)](http://npm-stat.com/charts.html?package=syllabus)
+[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg)](http://travis-ci.org/rootslab/syllabus)
+[![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg)](https://david-dm.org/rootslab/syllabus)
+[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/syllabus.svg)](https://david-dm.org/rootslab/syllabus#info=devDependencies)
 
-[![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg?style=flat)](https://www.npmjs.org/package/syllabus)
-[![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg?style=flat)](http://travis-ci.org/rootslab/syllabus)
-[![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus)
-[![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus#info=devDependencies)
+[![status](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.badges/status.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
+[![views](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.counters/views.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
+[![views 24h](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.counters/views-24h.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
+[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg)](http://npm-stat.com/charts.html?package=syllabus)
+[![GITTIP](http://img.shields.io/gittip/rootslab.svg)](https://www.gittip.com/rootslab/)
 
 [![NPM GRAPH1](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
 
