@@ -29,6 +29,31 @@
 
 > Now __[176](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
+###Table of Contents
+
+- __[Install](#install)__
+- __[Run Tests](#run-tests)__
+- __[Run Benchmarks](#run-benchmarks)__
+- __[Constructor](#constructor)__
+. __[Sample Usage](#sample-usage)__
+- __[Properties, Methods](#properties-methods)__
+- __[Syllabus Commands](#syllabus-commands)__
+   - __[Keys](#keys)__
+   - __[Strings](#strings)__
+   - __[Hashes](#hashes)__
+   - __[Lists](#lists)__
+   - __[Sets](#sets)__
+   - __[Sorted Sets](#sorted-sets)__
+   - __[HyperLogLog](#hyperloglog)__
+   - __[PubSub](#pubsub)__
+   - __[Transactions](#transactions)__
+   - __[Scripting](#scripting)__
+   - __[Connection](#connection)__
+   - __[Server](#server)__
+- __[MIT License](#mit-license)__
+
+-----------------------------------------------------------------------
+
 ###Install
 
 ```bash
@@ -49,7 +74,7 @@ $ cd syllabus/
 $ npm test
 ```
 
-###Run Benchmark
+###Run Benchmarks
 
 ```bash
 $ cd syllabus/
@@ -346,7 +371,9 @@ Syllabus : {
     , semver : String
 }
 ```
--------------------------------------------------------------------------------------------------
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ###Syllabus Commands
 
@@ -417,6 +444,9 @@ obj = {
   , err : Error
 }
 ```
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####KEYS
 
@@ -528,7 +558,9 @@ obj = {
 'type' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####STRINGS
 
@@ -633,7 +665,9 @@ _[Back to Index](#syllabus-commands)_
 'strlen' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####HASHES
 
@@ -717,7 +751,9 @@ _[Back to Index](#syllabus-commands)_
 'hvals' : function ( Number key | String key [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####LISTS
 
@@ -762,7 +798,9 @@ _[Back to Index](#syllabus-commands)_
 'rpushx' : function ( Number src | String src, Number value | String value [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####SETS
 
@@ -816,7 +854,9 @@ _[Back to Index](#syllabus-commands)_
 'sunionstore' : function ( Number dest | String dest, Number key | String key | Array keys [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####SORTED SETS
 
@@ -921,7 +961,9 @@ _[Back to Index](#syllabus-commands)_
 'zunionstore' : function ( Number dest | String dest, Array keys [, Array weights [, String aggregate [, Function cback ] ] ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####HYPERLOGLOG
 
@@ -940,7 +982,9 @@ _[Back to Index](#syllabus-commands)_
 'pfselftest' : function ( [ Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####PUBSUB
 
@@ -972,7 +1016,9 @@ _[Back to Index](#syllabus-commands)_
 ```
 > __NOTE__: to unsubscribe from all channels use null or [].
 
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####TRANSACTIONS
 
@@ -993,7 +1039,9 @@ _[Back to Index](#syllabus-commands)_
 'unwatch' : function ( [ Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####SCRIPTING
 
@@ -1033,7 +1081,9 @@ _[Back to Index](#syllabus-commands)_
 }
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####CONNECTION
 
@@ -1058,7 +1108,9 @@ _[Back to Index](#syllabus-commands)_
 'select' : function ( Number db | String db [, Function cback ] ) : Object
 
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
+
+----------------------------------------------------------------------
 
 ####SERVER
 
@@ -1207,10 +1259,9 @@ _[Back to Index](#syllabus-commands)_
 
 'time' : function ( [ Function cback ] ) : Object
 ```
-_[Back to Index](#syllabus-commands)_
+_[Back to ToC](#table-of-contents)_
 
-------------------------------------------------------------------------
-
+----------------------------------------------------------------------
 
 ### MIT License
 
