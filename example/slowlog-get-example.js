@@ -23,7 +23,7 @@ var log = console.log
                 continue;
             }
             a[ i ] = new Buffer( String( el ) );
-        };
+        }
         return a;
     }
     // use a SLOWLOG GET reply from Redis
