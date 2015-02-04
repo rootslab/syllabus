@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 var log = console.log
-    , assert = require( 'assert' )
-    , util = require( 'util' )
     , syllabus = require( '../' )()
     , commands = syllabus.commands
     , key = 'KEY_FOR_LRANGE'

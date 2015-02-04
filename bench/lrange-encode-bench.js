@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 var log = console.log
-    , assert = require( 'assert' )
-    , util = require( 'util' )
     , syllabus = require( '../' )()
     , cmd = 'LRANGE'
     , key = 'KEY_FOR_LRANGE'
@@ -23,7 +21,7 @@ stime = Date.now();
 
 for ( ; i < l; ++i ) {
     result = syllabus.encode( cmd, key, args, fn, zn );
-};
+}
 
 etime = ( Date.now() - stime ) / 1000;
 
