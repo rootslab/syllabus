@@ -35,7 +35,7 @@
 - __[Run Tests](#run-tests)__
 - __[Run Benchmarks](#run-benchmarks)__
 - __[Constructor](#constructor)__
-. __[Sample Usage](#sample-usage)__
+- __[Sample Usage](#sample-usage)__
 - __[Properties, Methods](#properties-methods)__
 - __[Syllabus Commands](#syllabus-commands)__
    - __[Keys](#keys)__
