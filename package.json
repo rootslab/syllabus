@@ -1,53 +1,49 @@
 {
-  "name": "syllabus",
-  "version": "0.35.8",
-  "description": "Σ Syllabus, a collection of helpers mix-ins to encode Redis commands and to decode Redis replies, builded upon Sermone.",
-  "homepage": "https://github.com/rootslab/syllabus",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rootslab/syllabus.git"
-  },
-  "keywords": [
-    "Σ",
-    "syllabus",
-    "command encoder",
-    "protocol",
-    "redis",
-    "Redis",
-    "Redis protocol",
-    "Redis commands",
-    "Redis reply formatter",
-    "RESP",
-    "command mix-ins",
-    "script cache",
-    "LUA scripts",
-    "cache"
-  ],
-  "author": {
-    "name": "Guglielmo Ferri",
-    "email": "44gatti@gmail.com"
-  },
-  "dependencies": {
-    "abaco": "=1.10.1",
-    "bolgia" : ">=2.7.4",
-    "hoar" : "=0.8.0",
-    "sermone" : "=1.8.0",
-    "camphora" : "=0.15.5"
-    },
-  "devDependencies": {
-   },
-  "main": "index",
-  "engines": {
+  "name": "syllabus"
+  , "version": "0.36.0"
+  , "description": "Σ Syllabus, a collection of helpers mix-ins to encode Redis commands and to decode Redis replies, builded upon Sermone."
+  , "homepage": "https://github.com/rootslab/syllabus"
+  , "private": false
+  , "repository": {
+    "type": "git"
+    , "url": "git://github.com/rootslab/syllabus.git"
+  }
+  , "keywords": [
+    "syllabus"
+    , "Σ"
+    , "RESP"
+    , "redis commands"
+    , "redis protocol encoder"
+    , "redis reply formatter"
+    , "command mix-ins"
+    , "script cache"
+    , "LUA scripts"
+    , "cache"
+  ]
+  , "author": {
+    "name": "Guglielmo Ferri"
+    , "email": "44gatti@gmail.com"
+  }
+  , "dependencies": {
+    "abaco": "=1.10.1"
+    , "bolgia" : ">=2.7.4"
+    , "hoar" : "=0.8.0"
+    , "sermone" : "=1.8.0"
+    , "camphora" : "=0.15.5"
+  }
+  , "devDependencies": {
+  }
+  , "main": "index"
+  , "engines": {
     "node": ">=0.10.x"
-  },
-  "scripts": {
-    "test": "node test/run.js",
-    "bench": "bash bench/run.sh"
-  },
-  "license": "MIT",
-  "readmeFilename": "Readme.md",
-  "bugs": {
+  }
+  , "scripts": {
+    "test": "node test/run.js"
+    , "bench": "bash bench/run.sh"
+  }
+  , "license": "MIT"
+  , "readmeFilename": "Readme.md"
+  , "bugs": {
     "url": "https://github.com/rootslab/syllabus/issues"
   }
 }
