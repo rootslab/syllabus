@@ -1146,7 +1146,7 @@ _[Back to ToC](#table-of-contents)_
 }
 
 'cluster' : {
-  'slots' : function ( [ Funciton cback ] ) : Object
+  'slots' : function ( [ Function cback ] ) : Object
 }
 
 'config' : {
