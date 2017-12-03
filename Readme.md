@@ -1,23 +1,20 @@
-###Σ Syllabus
+### Σ Syllabus
 
 [![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg?style=flat)](https://www.npmjs.org/package/syllabus)
 [![CODACY BADGE](https://img.shields.io/codacy/b18ed7d95b0a4707a0ff7b88b30d3def.svg?style=flat)](https://www.codacy.com/public/44gatti/syllabus)
-[![CODECLIMATE](http://img.shields.io/codeclimate/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 [![CODECLIMATE-TEST-COVERAGE](https://img.shields.io/codeclimate/coverage/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/syllabus#mit-license)
 
+![NODE VERSION](https://img.shields.io/node/v/syllabus.svg)
 [![TRAVIS CI BUILD](http://img.shields.io/travis/rootslab/syllabus.svg?style=flat)](http://travis-ci.org/rootslab/syllabus)
 [![BUILD STATUS](http://img.shields.io/david/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus)
 [![DEVDEPENDENCY STATUS](http://img.shields.io/david/dev/rootslab/syllabus.svg?style=flat)](https://david-dm.org/rootslab/syllabus#info=devDependencies)
-[![NPM DOWNLOADS](http://img.shields.io/npm/dm/syllabus.svg?style=flat)](http://npm-stat.com/charts.html?package=syllabus)
 
-[![NPM GRAPH1](https://nodei.co/npm-dl/syllabus.png)](https://nodei.co/npm/syllabus/)
+[![NPM MONTHLY](http://img.shields.io/npm/dm/syllabus.svg?style=flat)](http://npm-stat.com/charts.html?package=syllabus)
+![NPM YEARLY](https://img.shields.io/npm/dy/syllabus.svg)
 
-[![NPM GRAPH2](https://nodei.co/npm/syllabus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/syllabus/)
+[![NPM GRAPH](https://nodei.co/npm/syllabus.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/syllabus/)
 
-[![status](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.badges/status.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
-[![views](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.counters/views.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
-[![views 24h](https://sourcegraph.com/api/repos/github.com/rootslab/syllabus/.counters/views-24h.png)](https://sourcegraph.com/github.com/rootslab/syllabus)
 
 > **_Σ Syllabus_**, a collection of helpers mix-ins to encode  __Redis__ commands and to decode __Redis__ replies, builded upon __[Sermone](https://github.com/rootslab/sermone)__. Moreover, Syllabus mantains a __cache__ for __LUA__ scripts, using the __[Camphora](https://github.com/rootslab/camphora)__ module. See __Syllabus.lua__ property.
 
@@ -29,7 +26,7 @@
 
 > Now __[176](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
-###Table of Contents
+### Table of Contents
 
 - __[Install](#install)__
 - __[Run Tests](#run-tests)__
@@ -54,7 +51,7 @@
 
 -----------------------------------------------------------------------
 
-###Install
+### Install
 
 ```bash
 $ npm install syllabus [-g]
@@ -67,21 +64,21 @@ $ git clone git@github.com:rootslab/syllabus.git
 var Syllabus  = require( 'syllabus' );
 ```
 
-###Run Tests
+### Run Tests
 
 ```bash
 $ cd syllabus/
 $ npm test
 ```
 
-###Run Benchmarks
+### Run Benchmarks
 
 ```bash
 $ cd syllabus/
 $ npm run-script bench
 ```
 
-###Constructor
+### Constructor
 
 > Create an instance.
 > __Optionally__ it is possible to:
@@ -94,7 +91,7 @@ $ npm run-script bench
 var s = Syllabus( [ Boolean develop | String semver ] )
 ```
 
-###Sample Usage
+### Sample Usage
 
 > Create a normal syllabus, then some syllabus in development mode.
 
@@ -116,7 +113,7 @@ log( ancient.size() );
 ```
 > See [examples](example/).
 
-###Properties, Methods
+### Properties, Methods
 
 > Arguments within [ ] are optional.
 
@@ -375,7 +372,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-###Syllabus Commands
+### Syllabus Commands
 
 __Types:__
 - [Keys](#keys) : _23 commands_.
@@ -448,7 +445,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####KEYS
+#### KEYS
 
 > _Redis [Keys](http://redis.io/commands#generic), 23 commands + 1 empty parent command_.
 
@@ -562,7 +559,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####STRINGS
+#### STRINGS
 
 > _Redis [Strings](http://redis.io/commands#string), 26 commands + 1 empty parent command_.
 
@@ -669,7 +666,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####HASHES
+#### HASHES
 
 > _Redis [Hashes](http://redis.io/commands#hash), 14 commands_.
 
@@ -755,7 +752,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####LISTS
+#### LISTS
 
 > _Redis [Lists](http://redis.io/commands#list), 17 commands_. 
 
@@ -802,7 +799,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####SETS
+#### SETS
 
 > _Redis [Sets](http://redis.io/commands#set), 15 commands_.
 
@@ -858,7 +855,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####SORTED SETS
+#### SORTED SETS
 
 > _Redis [Sorted Sets](http://redis.io/commands#sorted_set), 20 commands_.
 
@@ -965,7 +962,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####HYPERLOGLOG
+#### HYPERLOGLOG
 
 > _Redis [HyperLogLog](http://redis.io/commands#hyperloglog), 4 commands_.
 
@@ -986,7 +983,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####PUBSUB
+#### PUBSUB
 
 > _Redis [PubSub](http://redis.io/commands#pubsub), 8 commands + 1 empty parent command_.
 
@@ -1020,7 +1017,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####TRANSACTIONS
+#### TRANSACTIONS
 
 > _Redis [Transactions](http://redis.io/commands#transactions), 5 commands_.
 
@@ -1043,7 +1040,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####SCRIPTING
+#### SCRIPTING
 
 > _Redis [Scripting](http://redis.io/commands#scripting), 6 commands + 1 empty parent command_.
 
@@ -1085,7 +1082,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####CONNECTION
+#### CONNECTION
 
 > _Redis [Connection](http://redis.io/commands#connection), 5 commands_.
 
@@ -1112,7 +1109,7 @@ _[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
-####SERVER
+#### SERVER
 
 > _Redis [Server](http://redis.io/commands#server), 33 commands + 6 empty parent commands_.
 
@@ -1265,7 +1262,7 @@ _[Back to ToC](#table-of-contents)_
 
 ### MIT License
 
-> Copyright (c) 2015 &lt; Guglielmo Ferri : 44gatti@gmail.com &gt;
+> Copyright (c) 2015-present &lt; Guglielmo Ferri : 44gatti@gmail.com &gt;
 
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
