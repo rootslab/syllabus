@@ -75,7 +75,7 @@ $ npm test
 
 ```bash
 $ cd syllabus/
-$ npm run-script bench
+$ npm run bench
 ```
 
 ### Constructor
@@ -385,7 +385,7 @@ __Types:__
 - [PubSub](#pubsub) : _8 commands_.
 - [Transactions](#transactions) : _5 commands_.
 - [Scripting](#scripting) : _6 commands_.
-- [Connection](#connection) : _5 commands_.
+- [Connection](#connection) : _6 commands_.
 - [Server](#server) : _33 commands_.
 
 > __NOTE:__ empty parent commands like DEBUG, CLIENT, .., are not counted.
@@ -1084,7 +1084,7 @@ _[Back to ToC](#table-of-contents)_
 
 #### CONNECTION
 
-> _Redis [Connection](http://redis.io/commands#connection), 5 commands_.
+> _Redis [Connection](http://redis.io/commands#connection), 6 commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -1103,6 +1103,8 @@ _[Back to ToC](#table-of-contents)_
 'quit' : function ( [ Function cback ] ) : Object
 
 'select' : function ( Number db | String db [, Function cback ] ) : Object
+
+'swapdb' : function ( Number db | String db, Number odb | String odb,  [, Function cback ] ) : Object
 
 ```
 _[Back to ToC](#table-of-contents)_
