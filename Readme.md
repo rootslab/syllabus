@@ -668,7 +668,7 @@ _[Back to ToC](#table-of-contents)_
 
 #### HASHES
 
-> _Redis [Hashes](http://redis.io/commands#hash), 14 commands_.
+> _Redis [Hashes](http://redis.io/commands#hash), 15 commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -744,6 +744,8 @@ _[Back to ToC](#table-of-contents)_
 'hset' : function ( Number key | String key, String field, Number value | String value [, Function cback ] ) : Object
 
 'hsetnx' : function ( Number key | String key, String field, Number value | String value [, Function cback ] ) : Object
+
+'hstrlen' : function ( Number key | String key, String field [, Function cback ] ) {
 
 'hvals' : function ( Number key | String key [, Function cback ] ) : Object
 
