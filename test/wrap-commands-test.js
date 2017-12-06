@@ -20,7 +20,7 @@ exports.test = function ( done, assertions ) {
         // a function wrapper
         , fn = function( ocmd ) {
             --c;
-            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.cmd, false, 1, true ) );
+            log( '  > cmd %s: %s.', inspect( cnt, false, 1, true ), inspect( ocmd.ecmd || ocmd.cmd, false, 1, true ) );
         }
         , c = 0
         , cnt = 0

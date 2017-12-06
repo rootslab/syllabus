@@ -375,9 +375,9 @@ _[Back to ToC](#table-of-contents)_
 ### Syllabus Commands
 
 __Types:__
-- [Keys](#keys) : _23 commands_.
+- [Keys](#keys) : _24 commands_.
 - [Strings](#strings) : _26 commands_.
-- [Hashes](#hashes) : _14 commands_.
+- [Hashes](#hashes) : _15 commands_.
 - [Lists](#lists) : _17 commands_.
 - [Sets](#sets) : _15 commands_.
 - [Sorted Sets](#sorted-sets) : _20 commands_.
@@ -447,7 +447,9 @@ _[Back to ToC](#table-of-contents)_
 
 #### KEYS
 
-> _Redis [Keys](http://redis.io/commands#generic), 23 commands + 1 empty parent command_.
+> _Redis [Keys](http://redis.io/commands#generic), 24 commands_.
+
+>_NOTE:_ OBJECT is an empty parent command with 3 subcommands.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for an argument.
 
@@ -987,7 +989,9 @@ _[Back to ToC](#table-of-contents)_
 
 #### PUBSUB
 
-> _Redis [PubSub](http://redis.io/commands#pubsub), 8 commands + 1 empty parent command_.
+> _Redis [PubSub](http://redis.io/commands#pubsub), 6 commands_.
+
+> _NOTE:_ PUBSUB is an empty object command with 3 subcommands.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
