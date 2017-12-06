@@ -24,7 +24,7 @@
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Σ Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
-> Now __[176](#syllabus-commands)__ Redis commands mix-ins are implemented.
+> Now __[](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ### Table of Contents
 
@@ -376,15 +376,15 @@ _[Back to ToC](#table-of-contents)_
 
 __Types:__
 - [Keys](#keys) : _24 commands_.
-- [Strings](#strings) : _26 commands_.
+- [Strings](#strings) : _27 commands_.
 - [Hashes](#hashes) : _15 commands_.
 - [Lists](#lists) : _17 commands_.
 - [Sets](#sets) : _15 commands_.
-- [Sorted Sets](#sorted-sets) : _20 commands_.
+- [Sorted Sets](#sorted-sets) : _21 commands_.
 - [HyperLogLog](#hyperloglog) : _4 commands_.
-- [PubSub](#pubsub) : _8 commands_.
+- [PubSub](#pubsub) : _6 commands_.
 - [Transactions](#transactions) : _5 commands_.
-- [Scripting](#scripting) : _6 commands_.
+- [Scripting](#scripting) : _7 commands_.
 - [Connection](#connection) : _6 commands_.
 - [Server](#server) : _33 commands_.
 
@@ -563,7 +563,9 @@ _[Back to ToC](#table-of-contents)_
 
 #### STRINGS
 
-> _Redis [Strings](http://redis.io/commands#string), 26 commands + 1 empty parent command_.
+> _Redis [Strings](http://redis.io/commands#string), 24 commands._
+
+> _NOTE:_ BITTOP is an empty parent command with 4 subcommands.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -861,7 +863,7 @@ _[Back to ToC](#table-of-contents)_
 
 #### SORTED SETS
 
-> _Redis [Sorted Sets](http://redis.io/commands#sorted_set), 20 commands_.
+> _Redis [Sorted Sets](http://redis.io/commands#sorted_set), 21 commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -991,7 +993,7 @@ _[Back to ToC](#table-of-contents)_
 
 > _Redis [PubSub](http://redis.io/commands#pubsub), 6 commands_.
 
-> _NOTE:_ PUBSUB is an empty object command with 3 subcommands.
+> _NOTE:_ PUBSUB is an empty parent command with 3 subcommands.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -1048,7 +1050,9 @@ _[Back to ToC](#table-of-contents)_
 
 #### SCRIPTING
 
-> _Redis [Scripting](http://redis.io/commands#scripting), 6 commands + 1 empty parent command_.
+> _Redis [Scripting](http://redis.io/commands#scripting), 7 commands_.
+
+> _NOTE:_ SCRIPT object is an empty parent command with 5 subcommands.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
@@ -1119,7 +1123,7 @@ _[Back to ToC](#table-of-contents)_
 
 #### SERVER
 
-> _Redis [Server](http://redis.io/commands#server), 33 commands + 6 empty parent commands_.
+> _Redis [Server](http://redis.io/commands#server), 31 commands_.
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
