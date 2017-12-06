@@ -386,7 +386,7 @@ __Types:__
 - [Transactions](#transactions) : _5 commands_.
 - [Scripting](#scripting) : _7 commands_.
 - [Connection](#connection) : _6 commands_.
-- [Server](#server) : _33 commands_.
+- [Server](#server) : _31 commands_.
 
 > __NOTE:__ empty parent commands like DEBUG, CLIENT, .., are not counted.
 
