@@ -35,18 +35,19 @@
 - __[Sample Usage](#sample-usage)__
 - __[Properties, Methods](#properties-methods)__
 - __[Syllabus Commands](#syllabus-commands)__
-   - __[Keys](#keys)__
-   - __[Strings](#strings)__
+   - __[Connection](#connection)__
+   - __[Geo](#geo)__
    - __[Hashes](#hashes)__
+   - __[HyperLogLog](#hyperloglog)__
+   - __[Keys](#keys)__
    - __[Lists](#lists)__
+   - __[PubSub](#pubsub)__
+   - __[Scripting](#scripting)__
+   - __[Server](#server)__
    - __[Sets](#sets)__
    - __[Sorted Sets](#sorted-sets)__
-   - __[HyperLogLog](#hyperloglog)__
-   - __[PubSub](#pubsub)__
+   - __[Strings](#strings)__
    - __[Transactions](#transactions)__
-   - __[Scripting](#scripting)__
-   - __[Connection](#connection)__
-   - __[Server](#server)__
 - __[MIT License](#mit-license)__
 
 -----------------------------------------------------------------------
@@ -387,6 +388,7 @@ __Types:__
 - [Scripting](#scripting) : _7 commands_.
 - [Connection](#connection) : _6 commands_.
 - [Server](#server) : _31 commands_.
+- [Geo](#geo) : _4 commands_.
 
 > __NOTE:__ empty parent commands like DEBUG, CLIENT, .., are not counted.
 
