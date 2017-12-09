@@ -429,9 +429,9 @@ obj = {
 ```
 
 __Command Types/Categories:__
-- [Cluster](#cluster) : _1 command_.
+- [Cluster](#cluster) : _1 command (19 missing)_.
 - [Connection](#connection) : _6 commands_.
-- [Geo](#geo) : _4 commands_.
+- [Geo](#geo) : _4 commands, (2 missing)_.
 - [Hashes](#hashes) : _15 commands_.
 - [HyperLogLog](#hyperloglog) : _4 commands_.
 - [Keys](#keys) : _24 commands_.
@@ -441,7 +441,7 @@ __Command Types/Categories:__
 - [Server](#server) : _31 commands_.
 - [Sets](#sets) : _15 commands_.
 - [Sorted Sets](#sorted-sets) : _21 commands_.
-- [Strings](#strings) : _27 commands_.
+- [Strings](#strings) : _23 commands, (1 missing)_.
 - [Transactions](#transactions) : _5 commands_.
 
 _[Back to ToC](#table-of-contents)_
@@ -454,7 +454,7 @@ _[Back to ToC](#table-of-contents)_
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
-> __TODO:__ 19 CLUSTER commands
+> __TODO:__ 19 commands
 
 ```javascript
 'cluster' : {
@@ -1191,7 +1191,7 @@ _[Back to ToC](#table-of-contents)_
 
 #### STRINGS
 
-> _Redis [Strings](http://redis.io/commands#string), 24 commands._
+> _Redis [Strings](http://redis.io/commands#string), 23 commands._
 
 > _NOTE:_ BITTOP is an empty parent command with 4 subcommands.
 
