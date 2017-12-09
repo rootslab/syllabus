@@ -34,6 +34,7 @@ exports.test = function ( done, assertions ) {
                 }
                 ++c;
                 ++cnt;
+
                 hash[ h ]();
             }
         }
@@ -44,11 +45,11 @@ exports.test = function ( done, assertions ) {
 
     Syllabus.wrap( fn );
 
-    log( '- scan all Syllabus.commands and encode without arguments.' );
+    log( '- scan/list all Syllabus.commands and encode only commands without arguments.' );
 
     scan( commands );
 
-    log( '- check number of command scanned. should be: %s.', inspect( count( commands, true ), false, 1, true ) );
+    log( '- check number of command scanned/listed. should be: %s.', inspect( count( commands, true ), false, 1, true ) );
     assertions.isEqual( cnt, count( commands, true ) );
 
     log( '- check if all commands have been wrapped.' );

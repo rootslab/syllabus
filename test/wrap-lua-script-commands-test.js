@@ -44,11 +44,11 @@ exports.test = function ( done, assertions ) {
 
     lua.wrap( fn );
 
-    log( '- scan Syllabus.lua.script and encode without arguments.' );
+    log( '- scan Syllabus.lua.script and encode only commands without arguments.' );
 
     scan( lua.script );
 
-    log( '- check number of command scanned. should be: %s.', inspect( count( lua.script, true ), false, 1, true ) );
+    log( '- check number of command scanned/listed. should be: %s.', inspect( count( lua.script, true ), false, 1, true ) );
     assertions.isEqual( cnt, count( lua.script, true ) );
 
     log( '- check if all LUA script methods have been wrapped.' );
