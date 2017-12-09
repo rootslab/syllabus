@@ -454,7 +454,7 @@ _[Back to ToC](#table-of-contents)_
 
 > Arguments within [ ] are optional, '|' indicates multiple type for argument.
 
-> __TODO:__ 19 missing commands for Cluster
+> __TODO:__ 19 CLUSTER commands
 
 ```javascript
 'cluster' : {
