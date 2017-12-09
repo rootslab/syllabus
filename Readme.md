@@ -427,8 +427,6 @@ obj = {
   , err : Error
 }
 ```
-_[Back to ToC](#table-of-contents)_
-
 
 __Command Types/Categories:__
 - [Cluster](#cluster) : _1 command_.
@@ -446,6 +444,8 @@ __Command Types/Categories:__
 - [Strings](#strings) : _27 commands_.
 - [Transactions](#transactions) : _5 commands_.
 
+_[Back to ToC](#table-of-contents)_
+
 ----------------------------------------------------------------------
 
 #### CLUSTER
@@ -461,6 +461,7 @@ __Command Types/Categories:__
   'slots' : function ( [ Function cback ] ) : Object
 }
 ```
+_[Back to ToC](#table-of-contents)_
 
 ----------------------------------------------------------------------
 
