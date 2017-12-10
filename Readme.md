@@ -506,7 +506,7 @@ _[Back to ToC](#table-of-contents)_
 
 'geohash' : function ( Number key | String key | Array members, [, Function cback ] ) : Object
 
-'geodist' : function ( Number key | String key | Array members, [ unit, [, Function cback ] ] ) : Object
+'geodist' : function ( Number key | String key | Array members, [ String unit, [, Function cback ] ] ) : Object
 
 'geopos' : function ( Number key | String key | Array members, [, Function cback ] ) : Object
 ```
