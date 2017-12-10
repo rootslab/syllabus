@@ -24,7 +24,7 @@
 
 > __NOTE__: If you need a full-featured __Redis__ client, built with the help of __[♎ Libra](https://github.com/rootslab/libra)__ and __[Σ Syllabus](https://github.com/rootslab/syllabus)__ modules, try __[♠ Spade](https://github.com/rootslab/spade)__.
 
-> Now __[188](#syllabus-commands)__ Redis commands mix-ins are implemented.
+> Now __[190](#syllabus-commands)__ Redis commands mix-ins are implemented.
 
 ### Table of Contents
 
@@ -431,7 +431,7 @@ obj = {
 __Command Types/Categories:__
 - [Cluster](#cluster) : _1 command (19 missing)_.
 - [Connection](#connection) : _6 commands_.
-- [Geo](#geo) : _4 commands, (2 missing)_.
+- [Geo](#geo) : _6 commands_.
 - [Hashes](#hashes) : _15 commands_.
 - [HyperLogLog](#hyperloglog) : _4 commands_.
 - [Keys](#keys) : _24 commands_.
@@ -509,6 +509,39 @@ _[Back to ToC](#table-of-contents)_
 'geodist' : function ( Number key | String key | Array members, [ String unit, [, Function cback ] ] ) : Object
 
 'geopos' : function ( Number key | String key | Array members, [, Function cback ] ) : Object
+
+/*
+ * georadius accepts an option Object:
+ *
+ * opt = {
+ *   with : Array ( 'WITHCORD' 'WITHDIST' 'WITHASH' )
+ *   , count : Number
+ *   , order : String ( ASC | DESC )
+ *   , store : Number | String
+ *   , storedist : Number | String
+ * }
+ * 
+ * Original Redis command is:
+ * 
+ * GEORADIUS key long lat rad unit [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]
+ *
+ * unit: m|km|ft|mi
+ */
+
+'georadius' : function ( Number | String key, Number | String long, Number | String lat, Number | String radius, String unit [, Object opt [, Function cback ] ] ) : Object
+
+/*
+ * georadiusbymember accepts the same option Object as georadius:
+ * 
+ * Original Redis command is:
+ * 
+ * GEORADIUSBYMEMBER key member rad unit [WITHCOORD] [WITHDIST] [WITHHASH] [COUNT count] [ASC|DESC] [STORE key] [STOREDIST key]
+ *
+ * unit: m|km|ft|mi
+ */
+
+'georadiusbymember' : function ( Number | String key, Number | String member, Number | String radius, String unit [, Object opt [, Function cback ] ] ) : Object
+
 ```
 _[Back to ToC](#table-of-contents)_
 
@@ -941,9 +974,11 @@ _[Back to ToC](#table-of-contents)_
     'segfault' : function ( [ Function cback ] ) : Object
 }
 
-'flushall' : function ( [ Function cback ] ) : Object
+// Redis >= 4.0.0 added ASYNC option
+'flushall' : function ( [ Boolean async [, Function cback ] ] ) : Object
 
-'flushdb' : function ( [ Function cback ] ) : Object
+// Redis >= 4.0.0 added ASYNC option
+'flushdb' : function ( [ Boolean async [, Function cback ] ] ) : Object
 
 /*
  * The fn utility returned by the #info mix-in, is able to convert the
