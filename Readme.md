@@ -976,9 +976,13 @@ _[Back to ToC](#table-of-contents)_
 
 // Redis >= 4.0.0 added ASYNC option
 'flushall' : function ( [ Boolean async [, Function cback ] ] ) : Object
+// or legacy version that accepts only an optional callback
+'flushall' : function ( [ Function cback ] ) : Object
 
 // Redis >= 4.0.0 added ASYNC option
-'flushdb' : function ( [ Boolean async [, Function cback ] ] ) : Object
+'flushdb' : function ( [ Boolean async [, Function cback ] ) : Object
+// or legacy version that accepts only an optional callback
+'flushdb' : function ( [ Function cback ] ) : Object
 
 /*
  * The fn utility returned by the #info mix-in, is able to convert the
