@@ -20,7 +20,7 @@ var q = []
     , ecmd = Syllabus.commands.del( '1' );
     ;
 
-log( '\n-> command normal encoding:\n', ecmd )
+log( '\n-> command DEL with normal encoding:\n', ecmd )
 
 log( '\n-> wrap commands and promisify..' );
 
@@ -28,14 +28,16 @@ Syllabus.wrap( eat, true );
 
 pcmd = Syllabus.commands.del( 1 );
 
-log( '\n-> command is now:', pcmd );
+log( '\n-> command DEL is now:', pcmd );
 
-pcmd.then( ( v ) => log( '\n-> Promise result (array):', v ) );
+pcmd.then( ( v ) => log( '\n-> Promise result (an array):', v ) );
 
 
 pcmd = Syllabus.commands.keys( '*' );
 
-pcmd.spread( ( a, b ) => log( '\n-> Promise result (spread): ', a, b ) );
+log( '\n-> command KEYS is now:', pcmd );
+
+pcmd.spread( ( a, b ) => log( '\n-> Promise result (with spread): ', a, b ) );
 
 // simulate async reply
 let wait = 2000
