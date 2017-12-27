@@ -9,7 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Added
 - Syllabus.wrap method (optionally) returns a (native) Promise when a command
-  will be executed (and when no callback was defined for the command). 
+  will be executed (and when no callback was defined for the command).
+- Added Promise.prototype.spread method, if Promises are supported and if the
+  spread doesn't exists yet.
 
 ### Changed
 - Syllabus.wrap now accept 2 arguments: 
