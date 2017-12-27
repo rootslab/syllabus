@@ -142,12 +142,13 @@ Syllabus : {
     /*
      * Wrap all Syllabus commands with a function that gets
      * as argument the result object from the command encoding.
+     * optionally you can promisify the command, to return a promise
      *
      * NOTE: It is useful to automatically enqueue or write
      * an encoded command to a socket.
      * See usage example in Spade code: https://github.com/rootslab/spade
      */
-    , wrap : function ( Function wrapper ) : Boolean
+    , wrap : function ( Function wrapper, Boolean promisify ) : Boolean
 
     lua : {
       /*
