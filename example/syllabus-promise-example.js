@@ -11,25 +11,36 @@ var log = console.log
 // log all Syllabus properties
 // log( util.inspect( Syllabus, false, 3, true ) );
 
-var eat = ( o ) => {
-        log( '-> eat:', o )
-        let wait = 3000
-            ;
-        log( '\n-> now wait for %d secs to resolve..\n', wait / 1000 )
-        setTimeout( () => o.pn.rs( '"RESOLVED MINDLESSLY!"' ), wait )
+
+var q = []
+    , eat = ( o ) => {
+        log( '\n-> eat:', o )
+        q.push( o );
     }
     , ecmd = Syllabus.commands.del( '1' );
     ;
 
 log( '\n-> command normal encoding:\n', ecmd )
 
-log( '\n-> wrap commands and promisify..\n' );
+log( '\n-> wrap commands and promisify..' );
 
 Syllabus.wrap( eat, true );
 
-pcmd = Syllabus.commands.del( '1' );
+pcmd = Syllabus.commands.del( 1 );
 
-log( '-> command is now:', pcmd );
+log( '\n-> command is now:', pcmd );
+
+pcmd.then( ( v ) => log( '\n-> Promise result (array):', v ) );
 
 
-pcmd.then( ( v ) => log( '\n-> Promise: %s\n', v ) );
+pcmd = Syllabus.commands.keys( '*' );
+
+pcmd.spread( ( a, b ) => log( '\n-> Promise result (spread): ', a, b ) );
+
+// simulate async reply
+let wait = 2000
+    ;
+log( '\n-> waiting to resolve..' )
+
+setTimeout( () => q.pop().pn.rs( [ '"RESOLVED"', '"MINDLESSLY!"' ] ), wait );
+setTimeout( () => q.pop().pn.rs( [ '"RESOLVED"', '"MINDLESSLY!"' ] ), wait + 1000 )
