@@ -8,8 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [2.0.0] - 2017-12-27
 
 ### Added
-- Syllabus.wrap method (optionally) returns a (native) Promise when a command
-  will be executed (and when no callback was defined for the command).
+- Syllabus.wrap method will optionally return a native Promise when the command
+  has been executed without passing any callback.
 - Added Promise.prototype.spread method, if Promises are supported and if the
   spread doesn't exists yet.
 
