@@ -2,7 +2,7 @@
 
 [![NPM VERSION](http://img.shields.io/npm/v/syllabus.svg?style=flat)](https://www.npmjs.org/package/syllabus)
 [![CODACY BADGE](https://img.shields.io/codacy/b18ed7d95b0a4707a0ff7b88b30d3def.svg?style=flat)](https://www.codacy.com/public/44gatti/syllabus)
-[![CODECLIMATE-TEST-COVERAGE](https://img.shields.io/codeclimate/coverage/github/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
+[![CODECLIMATE-TEST-COVERAGE](https://img.shields.io/codeclimate/c/rootslab/syllabus.svg?style=flat)](https://codeclimate.com/github/rootslab/syllabus)
 [![LICENSE](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/rootslab/syllabus#mit-license)
 
 ![NODE VERSION](https://img.shields.io/node/v/syllabus.svg)
